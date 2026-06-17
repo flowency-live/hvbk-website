@@ -1,0 +1,271 @@
+/* =====================================================================
+   THE HI VIS BOOKKEEPER - site stylesheet
+   Brand: always "Hi Vis" (two words). Locked palette + Permanent Marker
+   (display) / Inter (body) + blob highlight device. Lots of white.
+   Colours chosen / paired for WCAG 2.1 AA: yellow is only ever a
+   BACKGROUND behind dark (ink) text; small accent text uses purple-deep
+   on light and teal-soft on dark.
+   ===================================================================== */
+:root{
+  --yellow:#E3A22E; --yellow-deep:#C9871A;
+  --teal-dark:#1E4D45; --teal:#2F8A7B; --teal-soft:#9FD3C7;
+  --lilac:#A88BBA; --lilac-soft:#D9C9E2; --purple-deep:#6E4F84;
+  --ink:#23262b; --muted:#5f636a; --line:#ece8e2;
+  --white:#ffffff; --paper:#FBFAF8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+.marker{font-family:'Permanent Marker',cursive;font-weight:400;letter-spacing:.4px;line-height:1.05}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 26px}
+.brushbar{height:7px;background:repeating-linear-gradient(45deg,var(--teal-dark) 0 16px,var(--yellow) 16px 32px)}
+
+/* ---------- BUTTONS ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:14px;padding:13px 24px;border-radius:12px;border:2px solid transparent;cursor:pointer;transition:transform .12s, box-shadow .12s;text-transform:uppercase;letter-spacing:.6px;font-family:'Inter',sans-serif}
+.btn:hover{transform:translateY(-2px)}
+.btn-yellow{background:var(--yellow);color:var(--ink);box-shadow:0 5px 0 var(--yellow-deep)}
+.btn-yellow:hover{box-shadow:0 7px 0 var(--yellow-deep)}
+.btn-teal{background:var(--teal-dark);color:#fff}
+.btn-teal:hover{background:#163b35}
+.btn-ghost{background:transparent;color:var(--teal-dark);border-color:var(--teal-dark)}
+.btn-ghost:hover{background:var(--teal-dark);color:#fff}
+.btn-ghost-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn-ghost-light:hover{border-color:var(--yellow);color:#fff;background:rgba(255,255,255,.08)}
+
+/* ---------- BLOB HIGHLIGHT (signature device) ---------- */
+.blob{display:inline-block;padding:8px 20px;border-radius:42px 38px 46px 36px/36px 46px 38px 44px;font-family:'Permanent Marker',cursive;text-transform:uppercase;line-height:1.15;transform:rotate(-1.3deg)}
+.blob.b-lilac{background:var(--lilac);color:var(--teal-dark)}
+.blob.b-teal{background:var(--teal);color:#fff}
+.blob.b-tealsoft{background:var(--teal-soft);color:var(--teal-dark)}
+.blob.b-yellow{background:var(--yellow);color:var(--ink)}
+.blob.b-lilacsoft{background:var(--lilac-soft);color:var(--purple-deep)}
+
+/* heading highlight (blob behind a word, in heading font) */
+.hl{background:var(--yellow);color:var(--ink);padding:0 .26em;display:inline-block;border-radius:30px 26px 30px 24px/24px 30px 26px 30px;transform:rotate(-1.5deg)}
+
+/* eyebrow */
+.eyebrow{display:inline-block;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;font-size:12px;color:var(--purple-deep);margin-bottom:10px}
+.eyebrow.on-dark{color:var(--teal-soft)}
+
+/* ---------- NAV (light, with logo) ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;gap:18px;height:90px}
+.brand{display:flex;align-items:center}
+.brand img{height:72px;width:auto}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:24px}
+.nav-links a{color:var(--teal-dark);font-weight:700;font-size:14.5px;transition:color .12s}
+.nav-links a:hover,.nav-links a.active{color:var(--purple-deep)}
+.nav-toggle{display:none;margin-left:auto;background:none;border:0;color:var(--teal-dark);font-size:26px;cursor:pointer}
+.has-drop{position:relative}
+.has-drop>a::after{content:" \25BE";font-size:10px;color:var(--purple-deep)}
+.drop{position:absolute;top:calc(100% + 14px);left:-16px;min-width:230px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.16s;box-shadow:0 22px 46px rgba(30,77,69,.16)}
+.has-drop:hover .drop,.has-drop:focus-within .drop{opacity:1;visibility:visible;transform:translateY(0)}
+.drop::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
+.drop a{display:block;padding:10px 14px;border-radius:9px;font-size:14px;color:var(--teal-dark)}
+.drop a:hover{background:var(--paper);color:var(--purple-deep)}
+
+/* ---------- SECTION HELPERS ---------- */
+section.pad{padding:90px 0}
+.sec-head{max-width:680px}
+.sec-head.center{margin:0 auto;text-align:center}
+.h2{font-size:clamp(30px,4.6vw,46px);font-weight:900;color:var(--teal-dark);line-height:1.04}
+.lead{color:#3f424a;font-size:18px;margin-top:16px;line-height:1.65}
+.muted-lead{color:var(--muted);font-size:17px;margin-top:14px;max-width:640px}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;background:var(--paper);overflow:hidden}
+.hero::after{content:"";position:absolute;right:-160px;top:-140px;width:520px;height:520px;border-radius:50%;background:var(--lilac-soft);opacity:.4;z-index:0}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:center;padding:70px 0 80px}
+.hero h1{font-size:clamp(40px,6vw,66px);font-weight:900;color:var(--teal-dark);line-height:1.04;letter-spacing:-.5px}
+.hero .lead{max-width:520px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 24px}
+.trust{display:flex;flex-wrap:wrap;align-items:center;gap:9px 16px;font-size:13px;color:var(--muted);font-weight:700}
+.trust .pill{background:var(--teal-dark);color:#fff;padding:5px 12px;border-radius:30px;font-size:11px;letter-spacing:.8px;text-transform:uppercase}
+.trust b{color:var(--teal-dark)}
+.trust .dot{width:5px;height:5px;border-radius:50%;background:var(--yellow)}
+.hero-art{position:relative;display:flex;align-items:center;justify-content:center;min-height:420px}
+.hero-art .blobback{position:absolute;width:430px;height:430px;border-radius:46% 54% 52% 48%/52% 46% 54% 48%;background:var(--teal-soft);opacity:.45}
+.hero-art .hmrc{position:relative;z-index:2;width:100%;max-width:500px;filter:drop-shadow(0 24px 44px rgba(30,77,69,.32))}
+
+/* ---------- VALUE STRIP (optional, dark) ---------- */
+.values{background:var(--teal-dark)}
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:34px 0}
+.value{display:flex;align-items:center;gap:13px;color:#fff}
+.value .tick{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;font-size:16px;color:#fff}
+.value:nth-child(1) .tick{background:var(--teal)}
+.value:nth-child(2) .tick{background:var(--yellow);color:var(--ink)}
+.value:nth-child(3) .tick{background:var(--lilac);color:var(--ink)}
+.value:nth-child(4) .tick{background:var(--teal)}
+.value b{font-size:15.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase}
+
+/* ---------- SERVICE CARDS ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;transition:transform .14s,box-shadow .14s;box-shadow:0 10px 30px rgba(30,77,69,.05);display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(30,77,69,.12)}
+.card .ic{width:54px;height:54px;border-radius:14px;background:var(--teal-dark);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px}
+.card h3{font-size:21px;font-weight:800;color:var(--teal-dark);margin-bottom:8px}
+.card p{color:var(--muted);font-size:14.5px;flex:1}
+.card .more{margin-top:16px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--teal-dark)}
+.card:hover .more{color:var(--purple-deep)}
+.card.invert{background:var(--teal-dark)}
+.card.invert h3{color:#fff}.card.invert p{color:#d3ddd9}
+.card.invert .ic{background:var(--yellow);color:var(--ink)}
+.card.invert .more{color:var(--teal-soft)}
+
+/* ---------- TAGLINE BAND ---------- */
+.band{background:var(--purple-deep);text-align:center;padding:54px 0}
+.band .marker{font-size:clamp(26px,4vw,40px);color:#fff}
+
+/* ---------- SPLIT / ABOUT TEASER ---------- */
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+.split .portrait-circ{position:relative;display:flex;justify-content:center}
+.split .portrait-circ img{width:100%;max-width:380px;filter:drop-shadow(0 18px 36px rgba(30,77,69,.2))}
+.ticks{list-style:none;margin-top:20px;display:grid;gap:12px}
+.ticks li{position:relative;padding-left:34px;font-size:16px;color:#3f424a}
+.ticks li::before{content:"\2713";position:absolute;left:0;top:0;width:23px;height:23px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.ticks.two{grid-template-columns:1fr 1fr;gap:12px 26px}
+
+/* ---------- PANEL (portal/feature) ---------- */
+.panel{background:var(--teal-dark);color:#fff;border-radius:24px;padding:52px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.panel h2{font-size:clamp(28px,4vw,40px);font-weight:900;color:#fff;line-height:1.05}
+.panel p{color:#d3ddd9;margin-top:14px}
+.panel .ticks li{color:#e7edeb}
+.panel .ticks li::before{background:var(--yellow);color:var(--ink)}
+
+/* ---------- CONTACT / FORM ---------- */
+.contact{background:var(--paper)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:0 16px 40px rgba(30,77,69,.08)}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:12.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--teal-dark);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:12px 14px;border:1.5px solid #d9d5cd;border-radius:11px;font-size:15px;font-family:inherit;color:var(--ink);background:#fff;outline:none;transition:border-color .12s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--teal)}
+.field textarea{min-height:120px;resize:vertical}
+.field.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-note{font-size:12.5px;color:var(--muted);margin-top:10px}
+.form-status{margin-top:14px;font-weight:700;font-size:14.5px;display:none}
+.form-status.ok{display:block;color:var(--teal-dark)}
+.form-status.err{display:block;color:#a33f2c}
+.contact-info .ticks li::before{background:var(--lilac);color:var(--ink)}
+.info-row{display:flex;align-items:center;gap:13px;margin-top:16px;font-size:16px;color:#3f424a}
+.info-row .ic{width:42px;height:42px;border-radius:11px;background:var(--teal-dark);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+
+/* ---------- CTA ---------- */
+.cta{background:var(--yellow);text-align:center;padding:78px 0}
+.cta .marker{font-size:clamp(30px,5vw,52px);color:var(--ink)}
+.cta p{font-size:17px;color:#43331a;margin:14px auto 26px;font-weight:600;max-width:620px}
+
+/* ---------- CREW (about) ---------- */
+.crew-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
+.crew-card{background:#fff;border:2px solid var(--teal-dark);border-radius:20px;overflow:hidden;text-align:center;box-shadow:8px 8px 0 var(--lilac)}
+.crew-card .pic{height:240px;background:linear-gradient(180deg,#eef7f4,#f3eef8);display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.crew-card .pic img{height:240px;width:auto;object-fit:contain}
+.crew-card .cc-body{padding:18px 18px 24px}
+.crew-card h3{font-size:23px;font-weight:900;color:var(--teal-dark)}
+.crew-card .role{color:var(--purple-deep);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:1px;margin:5px 0 9px}
+.crew-card p{font-size:14px;color:#5a5d65}
+
+/* ---------- PRICING ---------- */
+.price-group{margin-top:50px}
+.price-group-head{display:flex;align-items:center;gap:15px;margin-bottom:6px}
+.price-group-head .badge-ic{width:54px;height:54px;border-radius:14px;background:var(--teal-dark);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.price-group-head h2{font-size:30px;font-weight:900;color:var(--teal-dark)}
+.price-group .gsub{color:var(--muted);font-size:16px;margin:2px 0 26px;max-width:680px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tier{background:#fff;border:2px solid var(--teal-dark);border-radius:20px;padding:28px 26px;display:flex;flex-direction:column;box-shadow:7px 7px 0 var(--lilac-soft);transition:transform .14s,box-shadow .14s}
+.tier:hover{transform:translateY(-4px);box-shadow:10px 10px 0 var(--lilac)}
+.tier.featured{box-shadow:7px 7px 0 var(--yellow)}
+.tier .flag{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:800;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;padding:4px 11px;border-radius:20px;margin-bottom:12px;align-self:flex-start}
+.tier .ttl{font-family:'Permanent Marker',cursive;font-size:25px;color:var(--teal-dark);text-transform:uppercase;line-height:1.1}
+.tier .from{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--purple-deep);margin-top:10px}
+.tier .price{font-size:32px;font-weight:900;color:var(--teal-dark);line-height:1;margin:2px 0 2px}
+.tier .price small{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.4px}
+.tier .ticks{margin:16px 0 22px}
+.tier .ticks li{font-size:14.5px;padding-left:30px}
+.tier .ticks li::before{width:20px;height:20px;font-size:11px}
+.tier .btn{margin-top:auto;justify-content:center}
+.disclaimer{margin-top:42px;background:#fff;border:1px dashed #d9d5cd;border-left:5px solid var(--yellow);border-radius:12px;padding:20px 24px;color:#54575e;font-size:14.5px;font-style:italic}
+
+/* ---------- PROCESS STEPS ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;counter-reset:step}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 26px;position:relative;box-shadow:0 10px 30px rgba(30,77,69,.05)}
+.step::before{counter-increment:step;content:counter(step);position:absolute;top:-20px;left:26px;width:48px;height:48px;border-radius:13px;background:var(--yellow);color:var(--ink);font-family:'Permanent Marker',cursive;font-size:24px;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 var(--yellow-deep)}
+.step h3{font-size:20px;font-weight:800;color:var(--teal-dark);margin:16px 0 8px}
+.step p{color:var(--muted);font-size:15px}
+.step .result{margin-top:12px;font-size:14px;color:var(--teal-dark);font-weight:700}
+
+/* ---------- TILES (what's included groups) ---------- */
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:38px}
+.tile{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(30,77,69,.05)}
+.tile .ic{width:50px;height:50px;border-radius:13px;background:var(--teal-dark);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:23px;margin-bottom:14px}
+.tile h3{font-size:20px;font-weight:800;color:var(--teal-dark);margin-bottom:6px}
+
+/* ---------- SUB-HERO (inner pages) ---------- */
+.subhero{position:relative;background:var(--teal-dark);color:#fff;overflow:hidden;padding:60px 0 56px}
+.subhero::after{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;background:var(--teal);opacity:.3}
+.subhero .inner{position:relative;z-index:1;max-width:720px}
+.subhero h1{font-size:clamp(34px,5vw,52px);font-weight:900;color:#fff;line-height:1.03}
+.subhero p{color:#dbe4e1;font-size:18px;margin-top:16px;max-width:620px}
+.crumbs{font-size:13px;color:var(--teal-soft);font-weight:600;margin-bottom:16px}
+.crumbs a:hover{color:var(--yellow)}
+
+/* ---------- FOOTER ---------- */
+footer{background:#16211e;color:#cfdbd7;padding:54px 0 28px}
+.foot-banner{background:var(--teal-dark);border:1px solid rgba(255,255,255,.07);border-radius:22px;padding:28px 38px;display:grid;grid-template-columns:auto 1fr auto;gap:34px;align-items:center;margin-bottom:46px}
+.foot-banner .fb-portrait{width:104px;height:104px;flex-shrink:0}
+.fb-tag{font-family:'Inter',sans-serif;font-size:clamp(19px,2.4vw,25px);font-weight:900;color:#fff;text-transform:uppercase;line-height:1.22;letter-spacing:.3px}
+.fb-tag .hl-text{color:var(--yellow);background:none;transform:none;padding:0}
+.fb-values{display:grid;grid-template-columns:1fr 1fr;gap:11px 26px}
+.fb-val{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.4px}
+.fb-val .t{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;color:#fff}
+.fb-val:nth-child(1) .t{background:var(--teal)}
+.fb-val:nth-child(2) .t{background:var(--yellow);color:var(--ink)}
+.fb-val:nth-child(3) .t{background:var(--lilac);color:var(--ink)}
+.fb-val:nth-child(4) .t{background:var(--teal)}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.12)}
+footer .f-logo{background:#fff;border-radius:16px;padding:16px 20px;display:inline-block;margin-bottom:18px}
+footer .f-logo img{height:64px}
+footer p.blurb{color:#aebfba;font-size:14px;max-width:320px}
+footer h4{color:#fff;font-weight:800;letter-spacing:.4px;margin-bottom:14px;font-size:15px;text-transform:uppercase}
+footer a.fl{display:block;color:#b6c5c0;font-size:14px;margin-bottom:9px}
+footer a.fl:hover{color:var(--yellow)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:20px;font-size:13px;color:#a7b6b1;flex-wrap:wrap;gap:10px}
+.foot-tags{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.foot-tags span{background:rgba(255,255,255,.1);padding:5px 12px;border-radius:30px;font-weight:700;font-size:12px;color:#fff}
+
+/* ---------- LOGIN MODAL ---------- */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;background:rgba(20,30,28,.6);padding:20px}
+.modal.open{display:flex}
+.modal-card{width:390px;max-width:94vw;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.modal-top{background:var(--teal-dark);color:#fff;padding:20px 24px;display:flex;align-items:center;gap:12px}
+.modal-top b{font-size:18px;font-weight:800}
+.modal-body{padding:26px}
+.modal-body label{font-size:12px;font-weight:800;color:var(--teal-dark);display:block;margin:0 0 6px;text-transform:uppercase;letter-spacing:.5px}
+.modal-body input{width:100%;padding:11px 13px;border:1.5px solid #d9d5cd;border-radius:11px;margin-bottom:14px;font-size:14px;outline:none}
+.modal-body input:focus{border-color:var(--teal)}
+.close-x{margin-left:auto;background:none;border:0;color:#fff;font-size:24px;cursor:pointer;line-height:1}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:920px){
+  .hero-grid,.split,.panel,.contact-grid{grid-template-columns:1fr;gap:34px}
+  .cards,.tiers,.steps,.tiles,.crew-grid,.values-grid{grid-template-columns:1fr 1fr}
+  .hero-art{min-height:320px;order:-1}
+  .nav-links{display:none;position:absolute;top:90px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:18px 26px;gap:14px;border-bottom:3px solid var(--yellow)}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .has-drop .drop{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:6px 0 0 12px;min-width:0}
+  .has-drop>a::after{content:""}
+  .panel{padding:34px}
+  .ticks.two{grid-template-columns:1fr}
+  .foot-banner{grid-template-columns:1fr;text-align:center;justify-items:center;gap:22px}
+  .fb-values{grid-template-columns:1fr 1fr;text-align:left}
+}
+@media(max-width:600px){
+  .cards,.tiers,.steps,.tiles,.crew-grid,.values-grid{grid-template-columns:1fr}
+  .field.two{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .fb-values{grid-template-columns:1fr}
+}

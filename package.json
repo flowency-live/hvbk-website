@@ -1,0 +1,9 @@
+{
+  "name": "hvbk-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "serve": "npx serve public -l 3000"
+  }
+}
