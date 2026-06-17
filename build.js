@@ -3,7 +3,6 @@ const path = require('path');
 
 const SRC = path.join(__dirname, 'src');
 const PUBLIC = path.join(__dirname, 'public');
-const LOGOS_SRC = path.join(__dirname, 'logos');
 
 // Page configurations
 const PAGES = [
@@ -49,21 +48,6 @@ const PAGES = [
 function ensureDir(dir) {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
-  }
-}
-
-// Copy directory recursively
-function copyDir(src, dest) {
-  ensureDir(dest);
-  const entries = fs.readdirSync(src, { withFileTypes: true });
-  for (const entry of entries) {
-    const srcPath = path.join(src, entry.name);
-    const destPath = path.join(dest, entry.name);
-    if (entry.isDirectory()) {
-      copyDir(srcPath, destPath);
-    } else {
-      fs.copyFileSync(srcPath, destPath);
-    }
   }
 }
 
@@ -138,25 +122,7 @@ ${partials.loginModal}
   );
   console.log('  Copied site.js');
 
-  // Copy logos
-  const logosPublic = path.join(PUBLIC, 'logos');
-  ensureDir(logosPublic);
-
-  if (fs.existsSync(LOGOS_SRC)) {
-    const logoFiles = fs.readdirSync(LOGOS_SRC);
-    let logoCount = 0;
-    for (const file of logoFiles) {
-      const srcPath = path.join(LOGOS_SRC, file);
-      const stat = fs.statSync(srcPath);
-      if (stat.isFile() && (file.endsWith('.png') || file.endsWith('.jpg') || file.endsWith('.ico'))) {
-        fs.copyFileSync(srcPath, path.join(logosPublic, file));
-        logoCount++;
-      }
-    }
-    console.log(`  Copied ${logoCount} logo files`);
-  } else {
-    console.log('  Warning: logos directory not found');
-  }
+  // Note: logos/images are already optimized in public/logos/
 
   console.log('\nBuild complete!');
 
