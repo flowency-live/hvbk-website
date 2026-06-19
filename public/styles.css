@@ -108,7 +108,8 @@ section.pad{padding:90px 0}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
 .card{
   background:#fff;
-  border:2px solid transparent;
+  border:2px solid var(--line);
+  border-left:5px solid var(--lilac);
   border-radius:20px;
   padding:30px;
   transition:transform .18s ease-out, box-shadow .18s ease-out, border-color .18s ease-out;
@@ -118,6 +119,13 @@ section.pad{padding:90px 0}
   position:relative;
   overflow:hidden;
 }
+/* Card left border color variations */
+.card:nth-child(1){border-left-color:var(--teal-dark)}
+.card:nth-child(2){border-left-color:var(--purple-deep)}
+.card:nth-child(3){border-left-color:var(--teal)}
+.card:nth-child(4){border-left-color:var(--lilac)}
+.card:nth-child(5){border-left-color:var(--yellow)}
+.card:nth-child(6){border-left-color:var(--teal-dark)}
 .card::before{
   content:"";
   position:absolute;
