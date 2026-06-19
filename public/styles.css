@@ -156,29 +156,25 @@ section.pad{padding:90px 0}
 .card .more{margin-top:18px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--purple-deep);transition:color .15s}
 .card:hover .more{color:var(--teal-dark)}
 
-/* Card icon color variations */
+/* Card background and icon color variations */
+.card:nth-child(1){background:linear-gradient(135deg, #f0f7f6 0%, #e8f4f2 100%)}
 .card:nth-child(1) .ic{background:var(--teal-dark);color:var(--teal-soft)}
 .card:nth-child(1)::before{background:var(--teal-dark)}
+.card:nth-child(2){background:linear-gradient(135deg, #f5f0fa 0%, #ede6f5 100%)}
 .card:nth-child(2) .ic{background:var(--purple-deep);color:var(--lilac-soft)}
 .card:nth-child(2)::before{background:var(--purple-deep)}
+.card:nth-child(3){background:linear-gradient(135deg, #e8f6f5 0%, #dff2f0 100%)}
 .card:nth-child(3) .ic{background:var(--teal);color:#fff}
 .card:nth-child(3)::before{background:var(--teal)}
+.card:nth-child(4){background:linear-gradient(135deg, #f8f0fb 0%, #f2e8f7 100%)}
 .card:nth-child(4) .ic{background:var(--lilac);color:var(--purple-deep)}
 .card:nth-child(4)::before{background:var(--lilac)}
+.card:nth-child(5){background:linear-gradient(135deg, #fefbf0 0%, #fdf8e6 100%)}
 .card:nth-child(5) .ic{background:var(--yellow);color:var(--ink)}
 .card:nth-child(5)::before{background:var(--yellow-deep)}
+.card:nth-child(6){background:linear-gradient(135deg, #f0f7f6 0%, #e8f4f2 100%)}
 .card:nth-child(6) .ic{background:var(--teal-dark);color:var(--yellow)}
 .card:nth-child(6)::before{background:var(--teal-dark)}
-
-/* Inverted card (featured) */
-.card.invert{background:var(--teal-dark);border-color:var(--teal-dark)}
-.card.invert::before{background:var(--yellow)}
-.card.invert h3{color:#fff}
-.card.invert p{color:#d3ddd9}
-.card.invert .ic{background:var(--yellow);color:var(--ink)}
-.card.invert .more{color:var(--teal-soft)}
-.card.invert:hover .more{color:var(--yellow)}
-.card.invert:hover{border-color:var(--teal)}
 
 /* ---------- TAGLINE BAND (now purple) ---------- */
 .band{background:var(--purple-deep);text-align:center;padding:54px 0}
