@@ -152,57 +152,117 @@ section.pad>*{position:relative;z-index:1}
 .value:nth-child(4) .tick{background:var(--teal)}
 .value b{font-size:15.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase}
 
-/* ---------- SERVICE CARDS (enhanced with varied colors) ---------- */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px;position:relative}
+/* ---------- SERVICE CARDS - Badge-Hero Layout ---------- */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+  margin-top:44px;
+}
 .card{
   background:#fff;
-  border:2px solid var(--line);
-  border-left:5px solid var(--lilac);
   border-radius:20px;
-  padding:30px;
-  transition:transform .18s ease-out, box-shadow .18s ease-out, border-color .18s ease-out;
-  box-shadow:0 4px 20px rgba(30,77,69,.06), 0 12px 40px rgba(30,77,69,.04);
-  display:flex;
-  flex-direction:column;
+  padding:0;
+  transition:transform .22s cubic-bezier(.4,0,.2,1), box-shadow .22s ease-out;
+  box-shadow:0 2px 12px rgba(30,77,69,.06), 0 8px 32px rgba(30,77,69,.05);
+  display:grid;
+  grid-template-columns:130px 1fr;
+  align-items:stretch;
   position:relative;
   overflow:hidden;
-  z-index:1;
+  border:2px solid var(--line);
 }
+/* Accent stripe on left */
 .card::before{
   content:"";
   position:absolute;
-  top:0;left:0;right:0;
-  height:4px;
-  background:var(--teal-dark);
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform .2s ease-out;
+  top:0;left:0;bottom:0;
+  width:5px;
+  background:var(--teal);
+  transition:width .18s ease-out;
 }
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 50px rgba(30,77,69,.12), 0 8px 24px rgba(30,77,69,.08);
-  border-color:var(--line);
-}
-.card:hover::before{transform:scaleX(1)}
+/* Color variations per card */
+.card:nth-child(1)::before{background:var(--teal)}
+.card:nth-child(2)::before{background:var(--purple-deep)}
+.card:nth-child(3)::before{background:var(--yellow)}
+.card:nth-child(4)::before{background:var(--lilac)}
+.card:nth-child(5)::before{background:var(--teal-dark)}
+.card:nth-child(6)::before{background:var(--purple-deep)}
+/* Badge container - the hero zone */
 .card .ic{
-  width:58px;height:58px;
-  border-radius:16px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:28px;
-  margin-bottom:18px;
-  transition:transform .2s ease-out;
+  width:130px;
+  min-height:130px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  padding:18px;
+  background:linear-gradient(145deg, #f6f9f8 0%, #ecf1f0 100%);
+  border-right:1px solid var(--line);
 }
-.card:hover .ic{transform:scale(1.08) rotate(-3deg)}
-.card h3{font-size:21px;font-weight:800;color:var(--teal-dark);margin-bottom:10px}
-.card p{color:var(--muted);font-size:14.5px;flex:1;line-height:1.6}
-.card .more{display:inline-block;margin-top:18px;padding:8px 18px;background:var(--yellow);color:var(--ink);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.6px;border-radius:30px;transition:transform .15s,box-shadow .15s;align-self:flex-start}
-.card:hover .more{transform:translateY(-2px);box-shadow:0 4px 0 var(--yellow-deep)}
-
-/* Card unified styling - teal theme with outline icons */
-.card{background:linear-gradient(135deg, #f0f7f6 0%, #e8f4f2 100%);border-left-color:var(--teal-dark)}
-.card .ic{background:transparent;border:2.5px solid var(--teal-dark);color:var(--teal-dark)}
-.card .ic svg{width:26px;height:26px}
-.card::before{background:var(--teal-dark)}
+.card .ic img{
+  width:94px;
+  height:94px;
+  object-fit:contain;
+  position:relative;
+  z-index:1;
+  transition:transform .25s cubic-bezier(.4,0,.2,1);
+  filter:drop-shadow(0 4px 12px rgba(30,77,69,.15));
+}
+/* Text content area */
+.card-body{
+  padding:22px 24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.card h3{
+  font-size:19px;
+  font-weight:800;
+  color:var(--teal-dark);
+  margin-bottom:8px;
+  line-height:1.2;
+}
+.card p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.55;
+  margin:0;
+}
+.card .more{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:12px;
+  padding:0;
+  background:none;
+  color:var(--teal-dark);
+  font-weight:700;
+  font-size:13px;
+  transition:color .15s, gap .15s;
+}
+.card .more::after{
+  content:"\2192";
+  font-size:14px;
+  transition:transform .15s ease-out;
+}
+/* Hover states */
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 36px rgba(30,77,69,.1), 0 4px 14px rgba(30,77,69,.06);
+  border-color:rgba(47,138,123,.25);
+}
+.card:hover::before{width:7px}
+.card:hover .ic img{transform:scale(1.1)}
+.card:hover .more{gap:10px}
+.card:hover .more::after{transform:translateX(3px)}
+/* Hover accent colors match stripe */
+.card:nth-child(1):hover .more{color:var(--teal)}
+.card:nth-child(2):hover .more{color:var(--purple-deep)}
+.card:nth-child(3):hover .more{color:#c9a227}
+.card:nth-child(4):hover .more{color:#9a7fb8}
+.card:nth-child(5):hover .more{color:var(--teal-dark)}
+.card:nth-child(6):hover .more{color:var(--purple-deep)}
 
 /* ---------- TAGLINE BAND (now purple) ---------- */
 .band{background:var(--purple-deep);text-align:center;padding:54px 0;position:relative;overflow:hidden}
@@ -408,7 +468,7 @@ footer a.fl:hover{color:var(--yellow)}
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:920px){
   .hero-grid,.split,.panel,.contact-grid{grid-template-columns:1fr;gap:34px}
-  .cards,.tiers,.steps,.tiles,.crew-grid,.values-grid{grid-template-columns:1fr 1fr}
+  .tiers,.steps,.tiles,.crew-grid,.values-grid{grid-template-columns:1fr 1fr}
   .hero-art{min-height:320px;order:-1}
   .nav-links{display:none;position:absolute;top:90px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:18px 26px;gap:14px;border-bottom:3px solid var(--lilac)}
   .nav-links.open{display:flex}
@@ -420,9 +480,27 @@ footer a.fl:hover{color:var(--yellow)}
   .foot-banner{grid-template-columns:1fr;text-align:center;justify-items:center;gap:22px}
   .fb-values{grid-template-columns:1fr 1fr;text-align:left}
 }
+@media(max-width:768px){
+  /* Cards go to single column but keep horizontal layout */
+  .cards{grid-template-columns:1fr;gap:18px}
+  .card{grid-template-columns:110px 1fr}
+  .card .ic{width:110px;min-height:110px;padding:14px}
+  .card .ic img{width:80px;height:80px}
+  .card-body{padding:18px 20px}
+  .card h3{font-size:17px}
+  .card p{font-size:13.5px}
+}
 @media(max-width:600px){
-  .cards,.tiers,.steps,.tiles,.crew-grid,.values-grid{grid-template-columns:1fr}
+  .tiers,.steps,.tiles,.crew-grid,.values-grid{grid-template-columns:1fr}
   .field.two{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
   .fb-values{grid-template-columns:1fr}
+  /* Compact cards for small screens */
+  .card{grid-template-columns:90px 1fr}
+  .card .ic{width:90px;min-height:90px;padding:10px}
+  .card .ic img{width:68px;height:68px}
+  .card-body{padding:14px 16px}
+  .card h3{font-size:16px;margin-bottom:6px}
+  .card p{font-size:13px;line-height:1.5}
+  .card .more{margin-top:10px;font-size:12px}
 }
