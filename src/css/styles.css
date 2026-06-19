@@ -402,7 +402,7 @@ section.pad>*{position:relative;z-index:1}
 .crew-card:nth-child(2):hover{box-shadow:10px 12px 0 var(--lilac)}
 .crew-card:nth-child(3):hover{box-shadow:10px 12px 0 var(--purple-deep)}
 .crew-card .pic{height:240px;background:#fff;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
-.crew-card .pic img{height:240px;width:auto;object-fit:contain}
+.crew-card .pic img{height:240px;width:auto;object-fit:contain;background:#fff}
 .crew-card .cc-body{padding:18px 18px 24px}
 .crew-card h3{font-size:23px;font-weight:900;color:var(--teal-dark)}
 .crew-card .role{color:var(--purple-deep);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:1px;margin:5px 0 9px}
