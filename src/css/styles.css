@@ -228,7 +228,7 @@ section.pad>*{position:relative;z-index:1}
   line-height:1.55;
   margin:0;
 }
-/* Mustard pill button */
+/* Mustard pill button - align-self prevents full-width stretch in flex column */
 .card .more{
   display:inline-block;
   margin-top:14px;
@@ -241,6 +241,8 @@ section.pad>*{position:relative;z-index:1}
   letter-spacing:.6px;
   border-radius:30px;
   transition:transform .18s, box-shadow .18s, background .18s;
+  align-self:flex-start;
+  width:auto;
 }
 /* Hover states - bolder animations */
 .card:hover{
@@ -251,6 +253,39 @@ section.pad>*{position:relative;z-index:1}
 .card:hover::before{width:8px}
 .card:hover .ic img{transform:scale(1.15) rotate(-3deg)}
 .card:hover .more{transform:translateY(-2px);box-shadow:0 4px 0 var(--yellow-deep)}
+
+/* ---------- SVG-BASED CARDS (no .card-body wrapper, vertical layout) ---------- */
+/* These cards have h3 as direct child - used on bookkeeping, services pages */
+.card:not(:has(.card-body)){
+  grid-template-columns:1fr;
+  grid-template-rows:auto 1fr;
+  text-align:center;
+  padding-bottom:24px;
+}
+.card:not(:has(.card-body)) .ic{
+  width:100%;
+  min-height:90px;
+  border-right:none;
+  border-bottom:1px solid var(--line);
+  padding:24px;
+  background:linear-gradient(180deg, rgba(47,138,123,.04) 0%, #fff 100%);
+}
+.card:not(:has(.card-body)) .ic svg{
+  width:44px;
+  height:44px;
+  stroke:var(--teal);
+  transition:transform .3s cubic-bezier(.4,0,.2,1);
+}
+.card:not(:has(.card-body)):hover .ic svg{transform:scale(1.15) rotate(-3deg)}
+.card:not(:has(.card-body)) h3{
+  padding:18px 22px 0;
+}
+.card:not(:has(.card-body)) p{
+  padding:0 22px;
+}
+.card:not(:has(.card-body)) .more{
+  margin:14px auto 0;
+}
 
 /* ---------- TAGLINE BAND (now purple) ---------- */
 .band{background:var(--purple-deep);text-align:center;padding:54px 0;position:relative;overflow:hidden}
@@ -477,6 +512,9 @@ footer a.fl:hover{color:var(--yellow)}
   .card-body{padding:18px 20px}
   .card h3{font-size:17px}
   .card p{font-size:13.5px}
+  /* SVG-based cards stay vertical */
+  .card:not(:has(.card-body)){grid-template-columns:1fr}
+  .card:not(:has(.card-body)) .ic{width:100%;min-height:80px;padding:18px}
 }
 @media(max-width:600px){
   .tiers,.steps,.tiles,.crew-grid,.values-grid{grid-template-columns:1fr}
@@ -491,4 +529,9 @@ footer a.fl:hover{color:var(--yellow)}
   .card h3{font-size:16px;margin-bottom:6px}
   .card p{font-size:13px;line-height:1.5}
   .card .more{margin-top:10px;font-size:12px}
+  /* SVG-based cards stay vertical */
+  .card:not(:has(.card-body)){grid-template-columns:1fr}
+  .card:not(:has(.card-body)) .ic{width:100%;min-height:70px;padding:16px}
+  .card:not(:has(.card-body)) h3{padding:14px 18px 0;font-size:15px}
+  .card:not(:has(.card-body)) p{padding:0 18px;font-size:13px}
 }
