@@ -198,10 +198,10 @@ section.pad>*{position:relative;z-index:1}
 .card .more{display:inline-block;margin-top:18px;padding:8px 18px;background:var(--yellow);color:var(--ink);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.6px;border-radius:30px;transition:transform .15s,box-shadow .15s;align-self:flex-start}
 .card:hover .more{transform:translateY(-2px);box-shadow:0 4px 0 var(--yellow-deep)}
 
-/* Card unified styling - teal theme with outline icons */
+/* Card unified styling - teal theme with badge images */
 .card{background:linear-gradient(135deg, #f0f7f6 0%, #e8f4f2 100%);border-left-color:var(--teal-dark)}
-.card .ic{background:transparent;border:2.5px solid var(--teal-dark);color:var(--teal-dark)}
-.card .ic svg{width:26px;height:26px}
+.card .ic{background:transparent;border:none;width:72px;height:72px;border-radius:50%;overflow:hidden}
+.card .ic img{width:100%;height:100%;object-fit:contain}
 .card::before{background:var(--teal-dark)}
 
 /* ---------- TAGLINE BAND (now purple) ---------- */
