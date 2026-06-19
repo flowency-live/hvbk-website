@@ -100,6 +100,7 @@ nav{display:flex;align-items:center;gap:18px;height:90px}
 .nav-links{margin-left:auto;display:flex;align-items:center;gap:24px}
 .nav-links a{color:var(--teal-dark);font-weight:700;font-size:14.5px;transition:color .12s}
 .nav-links a:hover,.nav-links a.active{color:var(--purple-deep)}
+.nav-links .btn-yellow{color:var(--ink)}
 .nav-toggle{display:none;margin-left:auto;background:none;border:0;color:var(--teal-dark);font-size:26px;cursor:pointer}
 .has-drop{position:relative}
 .has-drop>a::after{content:" \25BE";font-size:10px;color:var(--purple-deep)}
@@ -390,11 +391,7 @@ footer a.fl{display:block;color:#b6c5c0;font-size:14px;margin-bottom:9px}
 footer a.fl:hover{color:var(--yellow)}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:20px;font-size:13px;color:#a7b6b1;flex-wrap:wrap;gap:10px}
 .foot-tags{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
-.foot-tags span{background:rgba(255,255,255,.1);padding:5px 12px;border-radius:30px;font-weight:700;font-size:12px;color:#fff}
-.foot-tags span:nth-child(1){background:var(--teal)}
-.foot-tags span:nth-child(2){background:var(--lilac);color:var(--ink)}
-.foot-tags span:nth-child(3){background:var(--purple-deep)}
-.foot-tags span:nth-child(4){background:var(--yellow);color:var(--ink)}
+.foot-tags span{background:var(--teal);padding:5px 12px;border-radius:30px;font-weight:700;font-size:12px;color:#fff}
 
 /* ---------- LOGIN MODAL ---------- */
 .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;background:rgba(20,30,28,.6);padding:20px}
