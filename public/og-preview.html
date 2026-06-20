@@ -7,10 +7,10 @@
 <meta name="description" content="Screenshot this page at 1200x630 to create og-share.png" />
 <!-- Open Graph / WhatsApp / Social sharing -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://hivisbooks.co.uk/" />
+<meta property="og:url" content="https://www.hivisbooks.co.uk/" />
 <meta property="og:title" content="The Hi Vis Bookkeeper" />
 <meta property="og:description" content="Specialist bookkeeping for trades and construction. Xero certified. CIS, VAT, MTD. Accurate, compliant, HMRC ready." />
-<meta property="og:image" content="https://hivisbooks.co.uk/logos/og-share.png" />
+<meta property="og:image" content="https://www.hivisbooks.co.uk/logos/og-share.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -42,9 +42,9 @@
       </div>
     </div>
 
-    <!-- Right side with badge -->
+    <!-- Right side with portrait -->
     <div class="og-right">
-      <img src="logos/badge-hmrc-ready.png" alt="HMRC Ready" class="og-badge" />
+      <img src="logos/portrait-sarah.png" alt="Sarah - The Hi Vis Bookkeeper" class="og-portrait" />
     </div>
 
     <!-- Bottom stripe -->
@@ -57,7 +57,7 @@
         <img src="logos/check-pin-yellow.png" alt="" />
         <span>HMRC Ready</span>
       </div>
-      <span class="og-url">hivisbooks.co.uk</span>
+      <span class="og-url">www.hivisbooks.co.uk</span>
     </div>
   </div>
 </div>
@@ -79,7 +79,7 @@
   height: 630px;
   background: linear-gradient(135deg, #FBFAF8 0%, #fff 100%);
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.3fr 0.7fr;
   grid-template-rows: 1fr auto;
   position: relative;
   overflow: hidden;
@@ -92,45 +92,45 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 12px;
-  background: repeating-linear-gradient(45deg, #1E4D45 0 16px, #A88BBA 16px 32px, #E3A22E 32px 48px, #6E4F84 48px 64px);
+  height: 10px;
+  background: repeating-linear-gradient(45deg, #1E4D45 0 14px, #A88BBA 14px 28px, #E3A22E 28px 42px, #6E4F84 42px 56px);
 }
 
 .og-left {
-  padding: 80px 60px 40px;
+  padding: 60px 50px 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .og-logo {
-  width: 380px;
+  width: 340px;
   height: auto;
 }
 
 .og-tagline {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: #6E4F84;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 20px;
+  letter-spacing: 1.8px;
+  margin-top: 16px;
 }
 
 .og-badges {
   display: flex;
-  gap: 12px;
-  margin-top: 30px;
+  gap: 10px;
+  margin-top: 24px;
 }
 
 .og-badges span {
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 30px;
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
   background: #1E4D45;
   color: #fff;
@@ -140,19 +140,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 30px 50px 30px 0;
 }
 
-.og-badge {
-  width: 320px;
-  height: auto;
-  filter: drop-shadow(0 12px 30px rgba(30,77,69,0.25));
+.og-portrait {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #1E4D45;
+  box-shadow: 0 12px 40px rgba(30,77,69,0.3);
 }
 
 .og-bottom {
   grid-column: 1 / -1;
   background: linear-gradient(135deg, #1E4D45 0%, #6E4F84 100%);
-  padding: 24px 60px;
+  padding: 20px 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -161,28 +164,28 @@
 .og-checks {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .og-checks img {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
 .og-checks span {
   font-family: 'Permanent Marker', cursive;
-  font-size: 20px;
+  font-size: 18px;
   color: #E3A22E;
   text-transform: uppercase;
-  margin-right: 20px;
+  margin-right: 16px;
 }
 
 .og-url {
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   color: #fff;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 </style>
 
