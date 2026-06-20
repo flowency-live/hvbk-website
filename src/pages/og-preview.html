@@ -1,5 +1,8 @@
 <!-- OG Share Preview - Screenshot this at 1200x630 to create og-share.png -->
 <div class="og-canvas">
+  <!-- Top stripe -->
+  <div class="og-stripe-top"></div>
+
   <!-- Background layers -->
   <div class="og-bg-teal"></div>
   <div class="og-bg-diagonal"></div>
@@ -231,19 +234,36 @@
   z-index: 10;
 }
 
-/* Accent stripe */
+/* Accent stripes - diagonal like brushbar */
+.og-stripe-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(
+    135deg,
+    #E3A22E 0 40px,
+    #1E4D45 40px 80px,
+    #A88BBA 80px 120px,
+    #6E4F84 120px 160px
+  );
+  z-index: 20;
+}
+
 .og-stripe {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 6px;
+  height: 8px;
   background: repeating-linear-gradient(
-    90deg,
-    #E3A22E 0 80px,
-    #1E4D45 80px 160px,
-    #A88BBA 160px 240px,
-    #6E4F84 240px 320px
+    135deg,
+    #E3A22E 0 40px,
+    #1E4D45 40px 80px,
+    #A88BBA 80px 120px,
+    #6E4F84 120px 160px
   );
+  z-index: 20;
 }
 </style>
