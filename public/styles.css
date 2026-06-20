@@ -299,7 +299,26 @@ section.pad>*{position:relative;z-index:1}
 /* ---------- SPLIT / ABOUT TEASER ---------- */
 .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center;position:relative}
 .split .portrait-circ{position:relative;display:flex;justify-content:center}
-.split .portrait-circ img{width:100%;max-width:380px;filter:drop-shadow(0 18px 36px rgba(30,77,69,.2));position:relative;z-index:1}
+.split .portrait-circ img{width:100%;max-width:380px;filter:drop-shadow(0 18px 36px rgba(30,77,69,.2));position:relative;z-index:1;opacity:0;transform:rotate(-8deg);transition:all .8s cubic-bezier(.34,1.56,.64,1)}
+
+/* Portrait scroll-triggered reveal */
+.split .portrait-circ.in-view img{opacity:1;transform:rotate(0deg)}
+
+/* Continuous floating animation */
+@keyframes portrait-float{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-12px) rotate(1deg)}
+}
+
+.split .portrait-circ.in-view img{animation:portrait-float 6s ease-in-out infinite}
+
+/* Hover effect */
+@keyframes portrait-hover{
+  0%{transform:translateY(0) rotate(0deg) scale(1)}
+  100%{transform:translateY(-16px) rotate(2deg) scale(1.08)}
+}
+
+.split .portrait-circ:hover img{animation:portrait-hover .4s cubic-bezier(.34,1.56,.64,1) forwards;filter:drop-shadow(0 24px 48px rgba(30,77,69,.35))}
 .ticks{list-style:none;margin-top:20px;display:grid;gap:12px}
 .ticks li{position:relative;padding-left:38px;font-size:16px;color:#3f424a;transition:transform .15s}
 .ticks li:hover{transform:translateX(4px)}

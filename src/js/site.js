@@ -45,11 +45,17 @@ if ('IntersectionObserver' in window) {
     rootMargin: '0px 0px -50px 0px' // Slightly earlier on mobile
   });
 
-  // Observe all crew cards
+  // Observe all crew cards and portrait
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.crew-card').forEach(function(card) {
       crewObserver.observe(card);
     });
+
+    // Also observe Sarah's portrait on index page
+    var portrait = document.querySelector('.portrait-circ');
+    if (portrait) {
+      crewObserver.observe(portrait);
+    }
   });
 }
 
