@@ -257,7 +257,7 @@ section.pad>*{position:relative;z-index:1}
 /* Cards with tick lists (construction page) */
 .card-body .ticks{margin-top:8px;gap:8px}
 .card-body .ticks li{font-size:13.5px;padding-left:28px}
-.card-body .ticks li::before{width:18px;height:18px}
+.card-body .ticks li::before{width:22px;height:22px}
 
 /* ---------- SVG-BASED CARDS (no .card-body wrapper, vertical layout) ---------- */
 /* These cards have h3 as direct child - used on bookkeeping, services pages */
@@ -303,7 +303,7 @@ section.pad>*{position:relative;z-index:1}
 .ticks{list-style:none;margin-top:20px;display:grid;gap:12px}
 .ticks li{position:relative;padding-left:34px;font-size:16px;color:#3f424a;transition:transform .15s}
 .ticks li:hover{transform:translateX(4px)}
-.ticks li::before{content:"";position:absolute;left:0;top:0;width:24px;height:24px;background-size:contain;background-repeat:no-repeat;background-position:center;transition:transform .2s,box-shadow .2s}
+.ticks li::before{content:"";position:absolute;left:0;top:0;width:28px;height:28px;background-size:contain;background-repeat:no-repeat;background-position:center;transition:transform .2s,box-shadow .2s}
 .ticks li:hover::before{transform:scale(1.1)}
 .ticks.two{grid-template-columns:1fr 1fr;gap:12px 26px}
 
