@@ -1,0 +1,259 @@
+<!-- BUSINESS CARD - Standalone portrait card -->
+<div class="bcard-page">
+  <div class="bcard">
+    <!-- Top accent stripe -->
+    <div class="bcard-stripe"></div>
+
+    <!-- Logo -->
+    <div class="bcard-logo">
+      <img src="logos/logo-wordmark.png" alt="The Hi Vis Bookkeeper" />
+    </div>
+
+    <!-- Tagline -->
+    <p class="bcard-tagline">Bookkeeping for Trades &amp; Construction</p>
+
+    <!-- Divider with check pins -->
+    <div class="bcard-divider">
+      <img src="logos/check-pin-teal.png" alt="" />
+      <img src="logos/check-pin-lilac.png" alt="" />
+      <img src="logos/check-pin-yellow.png" alt="" />
+    </div>
+
+    <!-- Contact details -->
+    <div class="bcard-contact">
+      <div class="bcard-row">
+        <span class="bcard-icon">&#9993;</span>
+        <span>hello@hivisbooks.co.uk</span>
+      </div>
+      <div class="bcard-row">
+        <span class="bcard-icon">&#127760;</span>
+        <span>hivisbooks.co.uk</span>
+      </div>
+      <div class="bcard-row">
+        <span class="bcard-icon">&#128205;</span>
+        <span>Stockport, UK</span>
+      </div>
+    </div>
+
+    <!-- QR Code -->
+    <div class="bcard-qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://hivisbooks.co.uk&bgcolor=FBFAF8&color=1E4D45&margin=0" alt="Scan to visit website" />
+      <span>Scan to visit</span>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="bcard-badges">
+      <span class="bcard-pill">Xero Partner</span>
+      <span class="bcard-pill">CIS</span>
+      <span class="bcard-pill">VAT</span>
+      <span class="bcard-pill">MTD</span>
+    </div>
+
+    <!-- Bottom accent -->
+    <div class="bcard-bottom">
+      <span>Accurate</span>
+      <span>Compliant</span>
+      <span>HMRC Ready</span>
+    </div>
+  </div>
+
+  <!-- Print button (hidden when printing) -->
+  <button class="bcard-print" onclick="window.print()">Print Card</button>
+</div>
+
+<style>
+/* Business Card Page Styles */
+.bcard-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1E4D45 0%, #6E4F84 100%);
+  padding: 40px 20px;
+  gap: 24px;
+}
+
+.bcard {
+  width: 320px;
+  height: 540px;
+  background: #FBFAF8;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.bcard-stripe {
+  width: 100%;
+  height: 8px;
+  background: repeating-linear-gradient(45deg, #1E4D45 0 12px, #A88BBA 12px 24px, #E3A22E 24px 36px, #6E4F84 36px 48px);
+}
+
+.bcard-logo {
+  margin-top: 28px;
+  padding: 0 24px;
+}
+
+.bcard-logo img {
+  width: 200px;
+  height: auto;
+}
+
+.bcard-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #6E4F84;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+.bcard-divider {
+  display: flex;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.bcard-divider img {
+  width: 22px;
+  height: 22px;
+}
+
+.bcard-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.bcard-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #23262b;
+}
+
+.bcard-icon {
+  width: 28px;
+  height: 28px;
+  background: #1E4D45;
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.bcard-qr {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.bcard-qr img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  border: 2px solid #1E4D45;
+}
+
+.bcard-qr span {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #5f636a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bcard-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 20px;
+}
+
+.bcard-pill {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  background: #1E4D45;
+  color: #fff;
+}
+
+.bcard-bottom {
+  margin-top: auto;
+  width: 100%;
+  background: linear-gradient(135deg, #1E4D45 0%, #6E4F84 100%);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.bcard-bottom span {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 11px;
+  color: #E3A22E;
+  text-transform: uppercase;
+}
+
+.bcard-print {
+  background: #E3A22E;
+  color: #23262b;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #C9871A;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.bcard-print:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #C9871A;
+}
+
+/* Print styles */
+@media print {
+  .bcard-page {
+    background: none;
+    padding: 0;
+    min-height: auto;
+  }
+
+  .bcard {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .bcard-print {
+    display: none;
+  }
+}
+</style>

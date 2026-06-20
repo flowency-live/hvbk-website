@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Share Preview | The Hi Vis Bookkeeper</title>
+<meta name="description" content="Screenshot this page at 1200x630 to create og-share.png" />
+<!-- Open Graph / WhatsApp / Social sharing -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hivisbooks.co.uk/" />
+<meta property="og:title" content="The Hi Vis Bookkeeper" />
+<meta property="og:description" content="Specialist bookkeeping for trades and construction. Xero certified. CIS, VAT, MTD. Accurate, compliant, HMRC ready." />
+<meta property="og:image" content="https://hivisbooks.co.uk/logos/og-share.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<meta name="theme-color" content="#1E4D45" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+<!-- OG Share Preview - Screenshot this at 1200x630 to create og-share.png -->
+<div class="og-page">
+  <div class="og-card">
+    <!-- Left side with branding -->
+    <div class="og-left">
+      <img src="logos/logo-wordmark.png" alt="The Hi Vis Bookkeeper" class="og-logo" />
+      <p class="og-tagline">Bookkeeping for Trades &amp; Construction</p>
+      <div class="og-badges">
+        <span>Xero Partner</span>
+        <span>CIS</span>
+        <span>VAT</span>
+        <span>MTD</span>
+      </div>
+    </div>
+
+    <!-- Right side with badge -->
+    <div class="og-right">
+      <img src="logos/badge-hmrc-ready.png" alt="HMRC Ready" class="og-badge" />
+    </div>
+
+    <!-- Bottom stripe -->
+    <div class="og-bottom">
+      <div class="og-checks">
+        <img src="logos/check-pin-teal.png" alt="" />
+        <span>Accurate</span>
+        <img src="logos/check-pin-lilac.png" alt="" />
+        <span>Compliant</span>
+        <img src="logos/check-pin-yellow.png" alt="" />
+        <span>HMRC Ready</span>
+      </div>
+      <span class="og-url">hivisbooks.co.uk</span>
+    </div>
+  </div>
+</div>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.og-page {
+  width: 1200px;
+  height: 630px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FBFAF8;
+}
+
+.og-card {
+  width: 1200px;
+  height: 630px;
+  background: linear-gradient(135deg, #FBFAF8 0%, #fff 100%);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: 1fr auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent stripe top */
+.og-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: repeating-linear-gradient(45deg, #1E4D45 0 16px, #A88BBA 16px 32px, #E3A22E 32px 48px, #6E4F84 48px 64px);
+}
+
+.og-left {
+  padding: 80px 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.og-logo {
+  width: 380px;
+  height: auto;
+}
+
+.og-tagline {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #6E4F84;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.og-badges {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.og-badges span {
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  background: #1E4D45;
+  color: #fff;
+}
+
+.og-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.og-badge {
+  width: 320px;
+  height: auto;
+  filter: drop-shadow(0 12px 30px rgba(30,77,69,0.25));
+}
+
+.og-bottom {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #1E4D45 0%, #6E4F84 100%);
+  padding: 24px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.og-checks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.og-checks img {
+  width: 32px;
+  height: 32px;
+}
+
+.og-checks span {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+  color: #E3A22E;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+.og-url {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
+</style>
+
+</body>
+</html>

@@ -13,6 +13,18 @@ const PAGES = [
     activeNav: 'home'
   },
   {
+    slug: 'businesscard',
+    title: 'Business Card | The Hi Vis Bookkeeper',
+    description: 'Contact The Hi Vis Bookkeeper - specialist bookkeeping for trades and construction.',
+    standalone: true
+  },
+  {
+    slug: 'og-preview',
+    title: 'Share Preview | The Hi Vis Bookkeeper',
+    description: 'Screenshot this page at 1200x630 to create og-share.png',
+    standalone: true
+  },
+  {
     slug: 'bookkeeping',
     title: 'Bookkeeping Services | The Hi Vis Bookkeeper',
     description: 'Professional Xero bookkeeping, Making Tax Digital submissions and monthly management reporting for sole traders, contractors and small businesses across the UK.',
@@ -72,18 +84,32 @@ function build() {
   for (const page of PAGES) {
     const content = fs.readFileSync(path.join(SRC, 'pages', `${page.slug}.html`), 'utf8');
 
-    // Process header to mark active nav
-    let header = partials.header;
-    if (page.activeNav === 'home') {
-      header = header.replace('data-nav="home"', 'data-nav="home" class="active"');
-    } else if (page.activeNav === 'services') {
-      header = header.replace('data-nav="services"', 'data-nav="services" class="active"');
-    } else if (page.activeNav === 'about') {
-      header = header.replace('data-nav="about"', 'data-nav="about" class="active"');
-    }
+    let html;
 
-    // Assemble full page
-    let html = `<!DOCTYPE html>
+    if (page.standalone) {
+      // Standalone pages (no header/footer)
+      html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+${partials.head.replace('{{title}}', page.title).replace('{{description}}', page.description)}
+</head>
+<body>
+${content}
+</body>
+</html>`;
+    } else {
+      // Process header to mark active nav
+      let header = partials.header;
+      if (page.activeNav === 'home') {
+        header = header.replace('data-nav="home"', 'data-nav="home" class="active"');
+      } else if (page.activeNav === 'services') {
+        header = header.replace('data-nav="services"', 'data-nav="services" class="active"');
+      } else if (page.activeNav === 'about') {
+        header = header.replace('data-nav="about"', 'data-nav="about" class="active"');
+      }
+
+      // Assemble full page
+      html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 ${partials.head.replace('{{title}}', page.title).replace('{{description}}', page.description)}
@@ -97,6 +123,7 @@ ${partials.loginModal}
 <script src="site.js"></script>
 </body>
 </html>`;
+    }
 
     // Check for em-dashes
     if (html.includes('\u2014')) {
