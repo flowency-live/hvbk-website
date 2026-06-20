@@ -1,161 +1,250 @@
 <!-- OG Share Preview - Screenshot this at 1200x630 to create og-share.png -->
-<div class="og-page">
-  <div class="og-card">
-    <!-- Left side with branding -->
-    <div class="og-left">
-      <img src="logos/logo-wordmark.png" alt="The Hi Vis Bookkeeper" class="og-logo" />
-      <p class="og-tagline">Bookkeeping for Trades &amp; Construction</p>
-      <div class="og-badges">
-        <span>Xero Partner</span>
-        <span>CIS</span>
-        <span>VAT</span>
-        <span>MTD</span>
-      </div>
+<div class="og-canvas">
+  <!-- Background layers -->
+  <div class="og-bg-teal"></div>
+  <div class="og-bg-diagonal"></div>
+  <div class="og-texture"></div>
+
+  <!-- Portrait hero -->
+  <div class="og-portrait-wrap">
+    <div class="og-portrait-ring"></div>
+    <img src="logos/portrait-sarah.png" alt="Sarah" class="og-portrait" />
+  </div>
+
+  <!-- Content block -->
+  <div class="og-content">
+    <img src="logos/logo-wordmark.png" alt="The Hi Vis Bookkeeper" class="og-logo" />
+
+    <div class="og-tagline">
+      <span class="og-tag-text">Bookkeeping for</span>
+      <span class="og-tag-highlight">Trades & Construction</span>
     </div>
 
-    <!-- Right side with portrait -->
-    <div class="og-right">
-      <img src="logos/portrait-sarah.png" alt="Sarah - The Hi Vis Bookkeeper" class="og-portrait" />
-    </div>
-
-    <!-- Bottom stripe -->
-    <div class="og-bottom">
-      <div class="og-checks">
-        <img src="logos/check-pin-teal.png" alt="" />
-        <span>Accurate</span>
-        <img src="logos/check-pin-lilac.png" alt="" />
-        <span>Compliant</span>
-        <img src="logos/check-pin-yellow.png" alt="" />
-        <span>HMRC Ready</span>
-      </div>
-      <span class="og-url">www.hivisbooks.co.uk</span>
+    <div class="og-badges">
+      <span class="og-badge og-badge-gold">Xero Partner</span>
+      <span class="og-badge">CIS</span>
+      <span class="og-badge">VAT</span>
+      <span class="og-badge">MTD</span>
     </div>
   </div>
+
+  <!-- Trust strip -->
+  <div class="og-trust">
+    <div class="og-trust-item">
+      <img src="logos/check-pin-teal.png" alt="" />
+      <span>Accurate</span>
+    </div>
+    <div class="og-trust-item">
+      <img src="logos/check-pin-lilac.png" alt="" />
+      <span>Compliant</span>
+    </div>
+    <div class="og-trust-item">
+      <img src="logos/check-pin-yellow.png" alt="" />
+      <span>HMRC Ready</span>
+    </div>
+  </div>
+
+  <!-- URL -->
+  <div class="og-url">www.hivisbooks.co.uk</div>
+
+  <!-- Accent stripe -->
+  <div class="og-stripe"></div>
 </div>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@600;700;800;900&display=swap');
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-.og-page {
+.og-canvas {
   width: 1200px;
   height: 630px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #FBFAF8;
-}
-
-.og-card {
-  width: 1200px;
-  height: 630px;
-  background: linear-gradient(135deg, #FBFAF8 0%, #fff 100%);
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  grid-template-rows: 1fr auto;
   position: relative;
   overflow: hidden;
+  background: #FBFAF8;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
-/* Accent stripe top */
-.og-card::before {
-  content: "";
+/* Background layers */
+.og-bg-teal {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
-  height: 10px;
-  background: repeating-linear-gradient(45deg, #1E4D45 0 14px, #A88BBA 14px 28px, #E3A22E 28px 42px, #6E4F84 42px 56px);
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(160deg, #1E4D45 0%, #163b35 100%);
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-.og-left {
-  padding: 60px 50px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.og-bg-diagonal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  background: linear-gradient(160deg, #6E4F84 0%, #5a4170 100%);
+  clip-path: polygon(20% 0, 100% 0, 100% 85%, 5% 100%);
+  opacity: 0.15;
+}
+
+.og-texture {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 80% 20%, rgba(227, 162, 46, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(168, 139, 186, 0.06) 0%, transparent 30%);
+  pointer-events: none;
+}
+
+/* Portrait */
+.og-portrait-wrap {
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.og-portrait-ring {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  border: 4px solid rgba(227, 162, 46, 0.6);
+  border-radius: 50%;
+  animation: none;
+}
+
+.og-portrait {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff;
+  box-shadow:
+    0 25px 60px rgba(30, 77, 69, 0.4),
+    0 10px 25px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 2px rgba(30, 77, 69, 0.1);
+}
+
+/* Content */
+.og-content {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+  z-index: 5;
+  max-width: 580px;
 }
 
 .og-logo {
-  width: 340px;
+  width: 380px;
   height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
 }
 
 .og-tagline {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.og-tag-text {
+  font-size: 18px;
   font-weight: 700;
   color: #6E4F84;
   text-transform: uppercase;
-  letter-spacing: 1.8px;
-  margin-top: 16px;
+  letter-spacing: 3px;
+}
+
+.og-tag-highlight {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 32px;
+  color: #1E4D45;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .og-badges {
   display: flex;
   gap: 10px;
-  margin-top: 24px;
+  margin-top: 28px;
+  flex-wrap: wrap;
 }
 
-.og-badges span {
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
+.og-badge {
+  padding: 10px 18px;
   background: #1E4D45;
   color: #fff;
-}
-
-.og-right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 50px 30px 0;
-}
-
-.og-portrait {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #1E4D45;
-  box-shadow: 0 12px 40px rgba(30,77,69,0.3);
-}
-
-.og-bottom {
-  grid-column: 1 / -1;
-  background: linear-gradient(135deg, #1E4D45 0%, #6E4F84 100%);
-  padding: 20px 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.og-checks {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.og-checks img {
-  width: 28px;
-  height: 28px;
-}
-
-.og-checks span {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 18px;
-  color: #E3A22E;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  margin-right: 16px;
+  border-radius: 6px;
+  box-shadow: 0 3px 0 #163b35;
 }
 
+.og-badge-gold {
+  background: #E3A22E;
+  color: #1E4D45;
+  box-shadow: 0 3px 0 #C9871A;
+}
+
+/* Trust strip */
+.og-trust {
+  position: absolute;
+  bottom: 75px;
+  left: 60px;
+  display: flex;
+  gap: 32px;
+  z-index: 5;
+}
+
+.og-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.og-trust-item img {
+  width: 32px;
+  height: 32px;
+}
+
+.og-trust-item span {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 16px;
+  color: #1E4D45;
+  text-transform: uppercase;
+}
+
+/* URL */
 .og-url {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 22px;
+  position: absolute;
+  bottom: 22px;
+  right: 40px;
+  font-size: 20px;
   font-weight: 800;
   color: #fff;
   letter-spacing: 0.5px;
+  z-index: 10;
+}
+
+/* Accent stripe */
+.og-stripe {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(
+    90deg,
+    #E3A22E 0 80px,
+    #1E4D45 80px 160px,
+    #A88BBA 160px 240px,
+    #6E4F84 240px 320px
+  );
 }
 </style>
