@@ -560,12 +560,8 @@ footer a.fl:hover{color:var(--yellow)}
   .field.two{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
   .fb-values{grid-template-columns:1fr}
-  /* Footer banner mobile fix */
-  .foot-banner{padding:28px 20px;gap:16px}
-  .foot-banner .fb-portrait{width:90px;height:90px}
-  .fb-tag{font-size:16px;line-height:1.3}
-  .fb-val{font-size:11px;gap:8px}
-  .fb-val .t{width:20px;height:20px;font-size:10px}
+  /* Footer banner mobile - swap to taller background */
+  .foot-banner{background-image:url('logos/brush-stroke-bg-mobile.png');padding:32px 24px}
   /* Compact cards for small screens */
   .card{grid-template-columns:90px 1fr}
   .card .ic{width:90px;min-height:90px;padding:10px}
