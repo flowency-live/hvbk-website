@@ -99,6 +99,10 @@ function build() {
   // Ensure public directory exists
   ensureDir(PUBLIC);
 
+  // Generate cache-busting version (timestamp)
+  const version = Date.now();
+  console.log(`  Cache version: ${version}\n`);
+
   // Read partials
   const partials = {
     head: fs.readFileSync(path.join(SRC, 'partials', 'head.html'), 'utf8'),
@@ -159,6 +163,10 @@ ${partials.loginModal}
     if (html.includes('\u2014')) {
       warnings.push(`Em-dash found in ${page.slug}.html`);
     }
+
+    // Add cache-busting to CSS and JS
+    html = html.replace('styles.css', `styles.css?v=${version}`);
+    html = html.replace('site.js', `site.js?v=${version}`);
 
     // Write output
     fs.writeFileSync(path.join(PUBLIC, `${page.slug}.html`), html);
