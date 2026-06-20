@@ -254,6 +254,11 @@ section.pad>*{position:relative;z-index:1}
 .card:hover .ic img{transform:scale(1.15) rotate(-3deg)}
 .card:hover .more{transform:translateY(-2px);box-shadow:0 4px 0 var(--yellow-deep)}
 
+/* Cards with tick lists (construction page) */
+.card-body .ticks{margin-top:8px;gap:8px}
+.card-body .ticks li{font-size:13.5px;padding-left:28px}
+.card-body .ticks li::before{width:18px;height:18px;font-size:10px}
+
 /* ---------- SVG-BASED CARDS (no .card-body wrapper, vertical layout) ---------- */
 /* These cards have h3 as direct child - used on bookkeeping, services pages */
 .card:not(:has(.card-body)){
