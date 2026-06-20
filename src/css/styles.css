@@ -257,7 +257,7 @@ section.pad>*{position:relative;z-index:1}
 /* Cards with tick lists (construction page) */
 .card-body .ticks{margin-top:8px;gap:8px}
 .card-body .ticks li{font-size:13.5px;padding-left:28px}
-.card-body .ticks li::before{width:18px;height:18px;font-size:10px}
+.card-body .ticks li::before{width:18px;height:18px}
 
 /* ---------- SVG-BASED CARDS (no .card-body wrapper, vertical layout) ---------- */
 /* These cards have h3 as direct child - used on bookkeeping, services pages */
@@ -303,13 +303,14 @@ section.pad>*{position:relative;z-index:1}
 .ticks{list-style:none;margin-top:20px;display:grid;gap:12px}
 .ticks li{position:relative;padding-left:34px;font-size:16px;color:#3f424a;transition:transform .15s}
 .ticks li:hover{transform:translateX(4px)}
-.ticks li::before{content:"\2713";position:absolute;left:0;top:0;width:23px;height:23px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s}
-.ticks li:hover::before{transform:scale(1.1);box-shadow:0 4px 12px rgba(47,138,123,.3)}
+.ticks li::before{content:"";position:absolute;left:0;top:0;width:24px;height:24px;background-size:contain;background-repeat:no-repeat;background-position:center;transition:transform .2s,box-shadow .2s}
+.ticks li:hover::before{transform:scale(1.1)}
 .ticks.two{grid-template-columns:1fr 1fr;gap:12px 26px}
 
 /* Tick color variations */
-.ticks li:nth-child(odd)::before{background:var(--teal)}
-.ticks li:nth-child(even)::before{background:var(--lilac);color:var(--ink)}
+.ticks li:nth-child(3n+1)::before{background-image:url('logos/check-pin-teal.png')}
+.ticks li:nth-child(3n+2)::before{background-image:url('logos/check-pin-lilac.png')}
+.ticks li:nth-child(3n)::before{background-image:url('logos/check-pin-yellow.png')}
 
 /* ---------- PANEL (portal/feature) - now with gradient ---------- */
 .panel{
@@ -327,8 +328,6 @@ section.pad>*{position:relative;z-index:1}
 .panel h2{font-size:clamp(28px,4vw,40px);font-weight:900;color:#fff;line-height:1.05}
 .panel p{color:#d3ddd9;margin-top:14px}
 .panel .ticks li{color:#e7edeb}
-.panel .ticks li:nth-child(odd)::before{background:rgba(255,255,255,.15);color:#fff}
-.panel .ticks li:nth-child(even)::before{background:rgba(255,255,255,.15);color:#fff}
 
 /* ---------- CONTACT / FORM ---------- */
 .contact{background:var(--paper);position:relative;overflow:hidden}
@@ -346,8 +345,6 @@ section.pad>*{position:relative;z-index:1}
 .form-status{margin-top:14px;font-weight:700;font-size:14.5px;display:none}
 .form-status.ok{display:block;color:var(--teal-dark)}
 .form-status.err{display:block;color:#a33f2c}
-.contact-info .ticks li:nth-child(odd)::before{background:var(--lilac);color:var(--ink)}
-.contact-info .ticks li:nth-child(even)::before{background:var(--teal)}
 .info-row{display:flex;align-items:center;gap:13px;margin-top:16px;font-size:16px;color:#3f424a}
 .info-row .ic{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .info-row .ic svg{width:22px;height:22px}
@@ -438,7 +435,7 @@ section.pad>*{position:relative;z-index:1}
 .tier .price small{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.4px}
 .tier .ticks{margin:16px 0 22px}
 .tier .ticks li{font-size:14.5px;padding-left:30px}
-.tier .ticks li::before{width:20px;height:20px;font-size:11px}
+.tier .ticks li::before{width:20px;height:20px}
 .tier .btn{margin-top:auto;justify-content:center}
 .disclaimer{margin-top:42px;background:var(--lilac-soft);border:none;border-left:5px solid var(--purple-deep);border-radius:12px;padding:20px 24px;color:#54575e;font-size:14.5px;font-style:italic}
 
@@ -478,17 +475,17 @@ section.pad>*{position:relative;z-index:1}
 /* ---------- FOOTER ---------- */
 footer{background:#16211e;color:#cfdbd7;padding:54px 0 28px}
 .foot-banner{
-  background:linear-gradient(135deg, var(--teal-dark) 0%, var(--purple-deep) 100%);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:22px;
-  padding:28px 38px;
+  background:#fff url('logos/brush-stroke-bg.png') center/cover no-repeat;
+  border:none;
+  border-radius:0;
+  padding:48px 38px;
   display:grid;
   grid-template-columns:auto 1fr auto;
   gap:34px;
   align-items:center;
   margin-bottom:46px;
   position:relative;
-  overflow:hidden;
+  overflow:visible;
 }
 .foot-banner .fb-portrait{width:104px;height:104px;flex-shrink:0}
 .fb-tag{font-family:'Inter',sans-serif;font-size:clamp(19px,2.4vw,25px);font-weight:900;color:#fff;text-transform:uppercase;line-height:1.22;letter-spacing:.3px}
