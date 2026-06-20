@@ -416,14 +416,7 @@ section.pad>*{position:relative;z-index:1}
 /* ---------- PRICING ---------- */
 .price-group{margin-top:50px}
 .price-group-head{display:flex;align-items:center;gap:15px;margin-bottom:6px}
-.price-group-head .badge-ic{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
-/* Vary badge colors per group */
-.price-group:nth-child(1) .badge-ic{background:var(--teal-dark);color:var(--teal-soft)}
-.price-group:nth-child(2) .badge-ic{background:var(--purple-deep);color:var(--lilac-soft)}
-.price-group:nth-child(3) .badge-ic{background:var(--teal);color:#fff}
-.price-group:nth-child(4) .badge-ic{background:var(--lilac);color:var(--purple-deep)}
-.price-group:nth-child(5) .badge-ic{background:var(--yellow);color:var(--ink)}
-.price-group:nth-child(6) .badge-ic{background:var(--teal-dark);color:var(--yellow)}
+.price-group-head .badge-ic{width:54px;height:54px;flex-shrink:0;object-fit:contain}
 .price-group-head h2{font-size:30px;font-weight:900;color:var(--teal-dark)}
 .price-group .gsub{color:var(--muted);font-size:16px;margin:2px 0 26px;max-width:680px}
 .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
