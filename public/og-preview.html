@@ -32,28 +32,23 @@
 <body>
 <!-- OG Share Preview - Screenshot this at 1200x630 to create og-share.png -->
 <div class="og-canvas">
-  <!-- Full bleed teal background with angled cream section -->
-  <div class="og-bg-base"></div>
+  <!-- Simple split background -->
   <div class="og-bg-cream"></div>
-  <div class="og-grain"></div>
+  <div class="og-bg-teal"></div>
 
-  <!-- Diagonal accent stripe -->
-  <div class="og-accent-stripe"></div>
+  <!-- Top stripe -->
+  <div class="og-stripe-top"></div>
 
-  <!-- Portrait with ring -->
-  <div class="og-portrait-container">
-    <div class="og-ring"></div>
+  <!-- Portrait -->
+  <div class="og-portrait-wrap">
     <img src="logos/portrait-sarah.png" alt="Sarah" class="og-portrait" />
   </div>
 
-  <!-- Content stack -->
+  <!-- Content -->
   <div class="og-content">
     <img src="logos/logo-wordmark.png" alt="The Hi Vis Bookkeeper" class="og-logo" />
 
-    <div class="og-tagline">
-      <span class="og-tag-pre">Bookkeeping for</span>
-      <span class="og-tag-main">Trades & Construction</span>
-    </div>
+    <p class="og-tagline">Bookkeeping for Trades & Construction</p>
 
     <div class="og-badges">
       <span class="og-badge og-badge-gold">Xero Partner</span>
@@ -61,31 +56,20 @@
       <span class="og-badge">VAT</span>
       <span class="og-badge">MTD</span>
     </div>
+
+    <div class="og-trust">
+      <span><img src="logos/check-pin-yellow.png" alt="" />Accurate</span>
+      <span><img src="logos/check-pin-lilac.png" alt="" />Compliant</span>
+      <span><img src="logos/check-pin-yellow.png" alt="" />HMRC Ready</span>
+    </div>
   </div>
 
-  <!-- Trust bar at bottom -->
-  <div class="og-trust-bar">
-    <div class="og-trust-item">
-      <img src="logos/check-pin-yellow.png" alt="" />
-      <span>Accurate</span>
-    </div>
-    <div class="og-trust-item">
-      <img src="logos/check-pin-lilac.png" alt="" />
-      <span>Compliant</span>
-    </div>
-    <div class="og-trust-item">
-      <img src="logos/check-pin-yellow.png" alt="" />
-      <span>HMRC Ready</span>
-    </div>
-    <div class="og-url">hivisbooks.co.uk</div>
-  </div>
-
-  <!-- Corner stripes -->
-  <div class="og-corner-stripes"></div>
+  <!-- Bottom stripe -->
+  <div class="og-stripe"></div>
 </div>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@700;800;900&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -97,195 +81,129 @@
   font-family: 'Inter', system-ui, sans-serif;
 }
 
-/* Backgrounds */
-.og-bg-base {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #1E4D45 0%, #163b35 60%, #0f2a26 100%);
-}
-
+/* Simple two-tone background */
 .og-bg-cream {
   position: absolute;
   top: 0;
   left: 0;
-  width: 62%;
+  width: 65%;
   height: 100%;
-  background: linear-gradient(160deg, #FBFAF8 0%, #f5f3ef 100%);
-  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+  background: #FBFAF8;
 }
 
-.og-grain {
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.03;
-  pointer-events: none;
-}
-
-/* Diagonal accent */
-.og-accent-stripe {
+.og-bg-teal {
   position: absolute;
   top: 0;
-  left: 54%;
-  width: 120px;
-  height: 150%;
-  background: linear-gradient(180deg, #E3A22E 0%, #E3A22E 25%, #6E4F84 25%, #6E4F84 50%, #A88BBA 50%, #A88BBA 75%, #E3A22E 75%);
-  transform: rotate(-15deg) translateY(-100px);
-  opacity: 0.9;
+  right: 0;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(180deg, #1E4D45 0%, #163b35 100%);
 }
 
-/* Portrait */
-.og-portrait-container {
+/* Portrait - on the dividing line */
+.og-portrait-wrap {
   position: absolute;
   top: 50%;
-  right: 140px;
-  transform: translateY(-50%);
+  left: 58%;
+  transform: translate(-50%, -50%);
   z-index: 10;
 }
 
-.og-ring {
-  position: absolute;
-  top: -12px;
-  left: -12px;
-  right: -12px;
-  bottom: -12px;
-  border: 5px solid #E3A22E;
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(227, 162, 46, 0.3);
-}
-
 .og-portrait {
-  width: 260px;
-  height: 260px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #fff;
-  box-shadow:
-    0 25px 50px rgba(0, 0, 0, 0.4),
-    0 10px 20px rgba(30, 77, 69, 0.3);
+  border: 8px solid #fff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
-/* Content */
+/* Content - all on cream side */
 .og-content {
   position: absolute;
   top: 50%;
-  left: 70px;
+  left: 60px;
   transform: translateY(-50%);
   z-index: 5;
+  max-width: 480px;
 }
 
 .og-logo {
-  width: 340px;
+  width: 320px;
   height: auto;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .og-tagline {
-  margin-top: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.og-tag-pre {
-  font-size: 14px;
-  font-weight: 800;
-  color: #6E4F84;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-.og-tag-main {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 42px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 28px;
   color: #1E4D45;
-  letter-spacing: 2px;
-  line-height: 1;
-  margin-top: 2px;
+  margin-top: 12px;
+  text-transform: uppercase;
 }
 
 .og-badges {
   display: flex;
   gap: 8px;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .og-badge {
-  padding: 8px 14px;
+  padding: 7px 12px;
   background: #1E4D45;
   color: #fff;
   font-size: 11px;
   font-weight: 900;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   border-radius: 4px;
-  box-shadow: 0 3px 0 #163b35;
 }
 
 .og-badge-gold {
   background: #E3A22E;
   color: #1E4D45;
-  box-shadow: 0 3px 0 #C9871A;
 }
 
-/* Trust bar */
-.og-trust-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 56px;
-  background: linear-gradient(90deg, #1E4D45 0%, #163b35 100%);
+.og-trust {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.og-trust span {
   display: flex;
   align-items: center;
-  padding: 0 70px;
-  gap: 32px;
-  z-index: 15;
-}
-
-.og-trust-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.og-trust-item img {
-  width: 22px;
-  height: 22px;
-}
-
-.og-trust-item span {
-  font-size: 13px;
+  gap: 6px;
+  font-size: 12px;
   font-weight: 800;
-  color: #fff;
+  color: #1E4D45;
   text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.og-url {
-  margin-left: auto;
-  font-size: 16px;
-  font-weight: 900;
-  color: #E3A22E;
   letter-spacing: 0.5px;
 }
 
-/* Corner decoration */
-.og-corner-stripes {
+.og-trust img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Stripes */
+.og-stripe-top,
+.og-stripe {
   position: absolute;
-  top: 0;
   left: 0;
   right: 0;
   height: 10px;
   background: repeating-linear-gradient(
-    90deg,
-    #E3A22E 0 60px,
-    #1E4D45 60px 120px,
-    #A88BBA 120px 180px,
-    #6E4F84 180px 240px
+    135deg,
+    #E3A22E 0 40px,
+    #1E4D45 40px 80px,
+    #A88BBA 80px 120px,
+    #6E4F84 120px 160px
   );
   z-index: 20;
 }
+
+.og-stripe-top { top: 0; }
+.og-stripe { bottom: 0; }
 </style>
 
 </body>
