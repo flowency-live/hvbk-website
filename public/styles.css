@@ -328,6 +328,8 @@ section.pad>*{position:relative;z-index:1}
 .panel h2{font-size:clamp(28px,4vw,40px);font-weight:900;color:#fff;line-height:1.05}
 .panel p{color:#d3ddd9;margin-top:14px}
 .panel .ticks li{color:#e7edeb}
+.panel .ticks li:nth-child(odd)::before{background-image:url('logos/check-pin-lilac.png')}
+.panel .ticks li:nth-child(even)::before{background-image:url('logos/check-pin-yellow.png')}
 
 /* ---------- CONTACT / FORM ---------- */
 .contact{background:var(--paper);position:relative;overflow:hidden}
@@ -472,10 +474,10 @@ section.pad>*{position:relative;z-index:1}
 .crumbs{font-size:13px;color:var(--lilac-soft);font-weight:600;margin-bottom:16px}
 .crumbs a:hover{color:var(--yellow)}
 
-/* ---------- FOOTER ---------- */
-footer{background:#16211e;color:#cfdbd7;padding:54px 0 28px}
+/* ---------- PRE-FOOTER BANNER ---------- */
+.pre-footer{background:#fff;padding:60px 0}
 .foot-banner{
-  background:#fff url('logos/brush-stroke-bg.png') center/cover no-repeat;
+  background:url('logos/brush-stroke-bg.png') center/cover no-repeat;
   border:none;
   border-radius:0;
   padding:48px 38px;
@@ -483,11 +485,13 @@ footer{background:#16211e;color:#cfdbd7;padding:54px 0 28px}
   grid-template-columns:auto 1fr auto;
   gap:34px;
   align-items:center;
-  margin-bottom:46px;
   position:relative;
   overflow:visible;
 }
-.foot-banner .fb-portrait{width:104px;height:104px;flex-shrink:0}
+.foot-banner .fb-portrait{width:140px;height:140px;flex-shrink:0}
+
+/* ---------- FOOTER ---------- */
+footer{background:#16211e;color:#cfdbd7;padding:54px 0 28px}
 .fb-tag{font-family:'Inter',sans-serif;font-size:clamp(19px,2.4vw,25px);font-weight:900;color:#fff;text-transform:uppercase;line-height:1.22;letter-spacing:.3px}
 .fb-tag .hl-text{color:var(--yellow);background:none;transform:none;padding:0}
 .fb-values{display:grid;grid-template-columns:1fr 1fr;gap:11px 26px}
