@@ -110,8 +110,9 @@ async function submitEnquiry(e) {
 
     if (res.ok) {
       form.reset();
-      status.className = 'form-status ok';
-      status.textContent = "Thanks! Your enquiry is in. We'll be in touch very soon.";
+      showSuccessPopup();
+      status.className = 'form-status';
+      status.textContent = '';
     } else {
       throw new Error('Request failed: ' + res.status);
     }
@@ -123,3 +124,53 @@ async function submitEnquiry(e) {
     btn.style.opacity = 1;
   }
 }
+
+// Success popup functions
+var successTimeout;
+
+function showSuccessPopup() {
+  var popup = document.getElementById('successPopup');
+  if (!popup) return;
+
+  popup.classList.remove('hide');
+  popup.classList.add('show');
+
+  // Clear any existing timeout
+  if (successTimeout) {
+    clearTimeout(successTimeout);
+  }
+
+  // Auto-close after 4.5 seconds
+  successTimeout = setTimeout(function() {
+    closeSuccessPopup();
+  }, 4500);
+}
+
+function closeSuccessPopup() {
+  var popup = document.getElementById('successPopup');
+  if (!popup) return;
+
+  popup.classList.add('hide');
+
+  setTimeout(function() {
+    popup.classList.remove('show', 'hide');
+  }, 300);
+
+  if (successTimeout) {
+    clearTimeout(successTimeout);
+  }
+}
+
+// Close popup on escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeSuccessPopup();
+  }
+});
+
+// Close popup on overlay click
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('success-popup-overlay')) {
+    closeSuccessPopup();
+  }
+});

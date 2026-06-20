@@ -924,3 +924,82 @@ footer a.fl:hover{color:var(--yellow)}
   .quick-links{flex-direction:column;align-items:stretch}
   .quick-link{justify-content:center}
 }
+
+/* ---------- SUCCESS POPUP ---------- */
+.success-popup{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+.success-popup.show{display:flex;animation:fadeIn .3s ease-out}
+.success-popup.hide{animation:fadeOut .3s ease-out forwards}
+
+.success-popup-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(30,77,69,.7);backdrop-filter:blur(4px)}
+
+.success-popup-card{position:relative;background:#fff;border:4px solid var(--yellow);border-radius:20px;padding:40px 30px 20px;max-width:440px;width:100%;box-shadow:0 20px 60px rgba(30,77,69,.25),0 0 0 8px rgba(227,162,46,.15);animation:popupBounce .6s cubic-bezier(.34,1.56,.64,1);transform-origin:center center}
+
+.success-close{position:absolute;top:12px;right:12px;width:32px;height:32px;border:none;background:var(--lilac-soft);color:var(--purple-deep);font-size:24px;font-weight:700;line-height:1;border-radius:50%;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;padding:0}
+.success-close:hover{background:var(--lilac);color:#fff;transform:rotate(90deg) scale(1.1)}
+
+.success-icon{width:100px;height:100px;margin:0 auto 24px;animation:iconStamp .6s cubic-bezier(.34,1.56,.64,1) .2s backwards}
+
+.success-check{width:100%;height:100%;filter:drop-shadow(0 4px 12px rgba(47,138,123,.3))}
+
+.success-check-bg{fill:var(--teal);stroke:var(--teal-dark);stroke-width:3;animation:checkBgPulse .6s ease-out .2s backwards}
+
+.success-check-mark{fill:none;stroke:#fff;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100;animation:checkDraw .5s ease-out .4s forwards}
+
+.success-content{text-align:center;margin-bottom:20px}
+
+.success-title{font-family:'Permanent Marker',cursive;font-size:28px;color:var(--teal-dark);margin:0 0 10px;animation:slideUp .5s ease-out .5s backwards}
+
+.success-message{font-size:17px;font-weight:600;color:#43331a;margin:0;animation:slideUp .5s ease-out .6s backwards}
+
+.success-progress{height:4px;background:var(--lilac-soft);border-radius:2px;overflow:hidden;position:relative}
+.success-progress::after{content:'';position:absolute;top:0;left:0;height:100%;width:100%;background:linear-gradient(90deg,var(--yellow) 0%,var(--teal) 100%);border-radius:2px;animation:progressBar 4.5s linear forwards}
+
+/* Animations */
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+@keyframes fadeOut{
+  to{opacity:0}
+}
+
+@keyframes popupBounce{
+  0%{transform:scale(.3) rotate(-8deg);opacity:0}
+  60%{transform:scale(1.05) rotate(2deg)}
+  100%{transform:scale(1) rotate(0deg);opacity:1}
+}
+
+@keyframes iconStamp{
+  0%{transform:scale(0) rotate(-45deg)}
+  60%{transform:scale(1.15) rotate(8deg)}
+  100%{transform:scale(1) rotate(0deg)}
+}
+
+@keyframes checkBgPulse{
+  0%{transform:scale(.8);opacity:0}
+  50%{transform:scale(1.1)}
+  100%{transform:scale(1);opacity:1}
+}
+
+@keyframes checkDraw{
+  to{stroke-dashoffset:0}
+}
+
+@keyframes slideUp{
+  from{transform:translateY(10px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+
+@keyframes progressBar{
+  from{transform:translateX(-100%)}
+  to{transform:translateX(0)}
+}
+
+/* Mobile responsive */
+@media(max-width:600px){
+  .success-popup-card{padding:32px 24px 16px;max-width:calc(100vw - 40px)}
+  .success-icon{width:80px;height:80px;margin-bottom:20px}
+  .success-title{font-size:24px}
+  .success-message{font-size:15px}
+}

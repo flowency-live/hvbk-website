@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=1781989557849" />
+<link rel="stylesheet" href="styles.css?v=1781990176020" />
 
 </head>
 <body>
@@ -298,6 +298,24 @@
   </div>
 </div>
 
-<script src="site.js?v=1781989557849"></script>
+<!-- Success Popup Modal -->
+<div class="success-popup" id="successPopup">
+  <div class="success-popup-overlay"></div>
+  <div class="success-popup-card">
+    <button class="success-close" onclick="closeSuccessPopup()" aria-label="Close">×</button>
+    <div class="success-icon">
+      <svg viewBox="0 0 100 100" class="success-check">
+        <circle class="success-check-bg" cx="50" cy="50" r="45" />
+        <path class="success-check-mark" d="M25 52 L42 68 L75 32" />
+      </svg>
+    </div>
+    <div class="success-content">
+      <h3 class="success-title">Thanks! Your enquiry is in.</h3>
+      <p class="success-message">We'll be in touch very soon.</p>
+    </div>
+    <div class="success-progress"></div>
+  </div>
+</div>
+<script src="site.js?v=1781990176020"></script>
 </body>
 </html>

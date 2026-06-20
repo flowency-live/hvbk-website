@@ -109,7 +109,8 @@ function build() {
     brushbar: fs.readFileSync(path.join(SRC, 'partials', 'brushbar.html'), 'utf8'),
     header: fs.readFileSync(path.join(SRC, 'partials', 'header.html'), 'utf8'),
     footer: fs.readFileSync(path.join(SRC, 'partials', 'footer.html'), 'utf8'),
-    loginModal: fs.readFileSync(path.join(SRC, 'partials', 'login-modal.html'), 'utf8')
+    loginModal: fs.readFileSync(path.join(SRC, 'partials', 'login-modal.html'), 'utf8'),
+    successPopup: fs.readFileSync(path.join(SRC, 'partials', 'success-popup.html'), 'utf8')
   };
 
   let warnings = [];
@@ -154,6 +155,7 @@ ${header}
 ${content}
 ${partials.footer}
 ${partials.loginModal}
+${partials.successPopup}
 <script src="site.js"></script>
 </body>
 </html>`;
