@@ -502,6 +502,7 @@ footer{background:#16211e;color:#cfdbd7;padding:54px 0 28px}
 .fb-val:nth-child(2) .t{background:var(--lilac);color:var(--ink)}
 .fb-val:nth-child(3) .t{background:var(--yellow);color:var(--ink)}
 .fb-val:nth-child(4) .t{background:var(--purple-deep)}
+.fb-values-mobile{display:none}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.12)}
 footer .f-logo{background:#fff;border-radius:12px;padding:10px 14px;display:inline-block;margin-bottom:18px}
 footer .f-logo img{height:52px}
@@ -560,8 +561,9 @@ footer a.fl:hover{color:var(--yellow)}
   .tiers,.steps,.tiles,.crew-grid,.values-grid{grid-template-columns:1fr}
   .field.two{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
-  .fb-values{grid-template-columns:1fr}
-  /* Footer banner mobile */
+  /* Footer banner mobile - hide values, show in footer instead */
+  .fb-values{display:none}
+  .fb-values-mobile{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.12)}
   .foot-banner{padding:32px 24px}
   /* Compact cards for small screens */
   .card{grid-template-columns:90px 1fr}
