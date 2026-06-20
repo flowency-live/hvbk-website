@@ -524,6 +524,7 @@ footer a.fl:hover{color:var(--yellow)}
 
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:920px){
+  section.pad{padding:50px 0}
   .hero-grid,.split,.panel,.contact-grid{grid-template-columns:1fr;gap:34px}
   .tiers,.steps,.tiles,.crew-grid,.values-grid{grid-template-columns:1fr 1fr}
   .hero-art{min-height:320px;order:-1}
