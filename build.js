@@ -53,6 +53,36 @@ const PAGES = [
     title: 'About | The Hi Vis Bookkeeper',
     description: 'Meet Sarah and the crew at The Hi Vis Bookkeeper. Specialist bookkeeping for construction, trades and contractor businesses, based in Stockport and serving the UK.',
     activeNav: 'about'
+  },
+  {
+    slug: 'privacy',
+    title: 'Privacy Policy | The Hi Vis Bookkeeper',
+    description: 'How The Hi Vis Bookkeeper collects, uses, and protects your personal information. UK GDPR compliant.',
+    activeNav: ''
+  },
+  {
+    slug: 'terms',
+    title: 'Terms & Conditions | The Hi Vis Bookkeeper',
+    description: 'Terms and conditions for using The Hi Vis Bookkeeper website and bookkeeping services.',
+    activeNav: ''
+  },
+  {
+    slug: 'accessibility',
+    title: 'Accessibility Statement | The Hi Vis Bookkeeper',
+    description: 'Our commitment to making The Hi Vis Bookkeeper website accessible to everyone, including WCAG 2.1 compliance.',
+    activeNav: ''
+  },
+  {
+    slug: 'cookies',
+    title: 'Cookie Policy | The Hi Vis Bookkeeper',
+    description: 'How The Hi Vis Bookkeeper uses cookies and similar technologies on our website.',
+    activeNav: ''
+  },
+  {
+    slug: '404',
+    title: 'Page Not Found | The Hi Vis Bookkeeper',
+    description: 'The page you are looking for could not be found.',
+    activeNav: ''
   }
 ];
 
