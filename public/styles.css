@@ -75,9 +75,9 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- BLOB HIGHLIGHT (signature device) ---------- */
 .blob{display:inline-block;padding:8px 20px;border-radius:42px 38px 46px 36px/36px 46px 38px 44px;font-family:'Permanent Marker',cursive;text-transform:uppercase;line-height:1.15;transform:rotate(-1.3deg)}
-.blob.b-lilac{background:var(--lilac);color:#fff}
-.blob.b-lilac-light{background:var(--lilac);color:#fff}
-.blob.b-teal{background:var(--teal);color:#fff}
+.blob.b-lilac{background:var(--lilac);color:#fff;-webkit-text-fill-color:#fff}
+.blob.b-lilac-light{background:var(--lilac);color:#fff;-webkit-text-fill-color:#fff}
+.blob.b-teal{background:var(--teal);color:#fff;-webkit-text-fill-color:#fff}
 .blob.b-tealsoft{background:var(--teal-soft);color:var(--teal-dark)}
 .blob.b-yellow{background:var(--yellow);color:var(--ink)}
 .blob.b-lilacsoft{background:var(--lilac-soft);color:var(--purple-deep)}
@@ -294,7 +294,7 @@ section.pad>*{position:relative;z-index:1}
 
 /* ---------- TAGLINE BAND (now purple) ---------- */
 .band{background:var(--purple-deep);text-align:center;padding:54px 0;position:relative;overflow:hidden}
-.band .marker{font-size:clamp(26px,4vw,40px);color:#fff;position:relative;z-index:1}
+.band .marker{font-size:clamp(26px,4vw,40px);color:#fff;-webkit-text-fill-color:#fff;position:relative;z-index:1}
 
 /* ---------- SPLIT / ABOUT TEASER ---------- */
 .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center;position:relative}
@@ -662,7 +662,7 @@ section.pad>*{position:relative;z-index:1}
 
 /* ---------- FOOTER ---------- */
 footer{background:#16211e;color:#cfdbd7;padding:54px 0 28px}
-.fb-tag{font-family:'Inter',sans-serif;font-size:clamp(19px,2.4vw,25px);font-weight:900;color:#fff;text-transform:uppercase;line-height:1.22;letter-spacing:.3px}
+.fb-tag{font-family:'Inter',sans-serif;font-size:clamp(19px,2.4vw,25px);font-weight:900;color:#fff;-webkit-text-fill-color:#fff;text-transform:uppercase;line-height:1.22;letter-spacing:.3px}
 .fb-tag .hl-text{color:var(--yellow);background:none;transform:none;padding:0}
 .fb-values{display:grid;grid-template-columns:1fr 1fr;gap:11px 26px}
 .fb-val{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.4px}
