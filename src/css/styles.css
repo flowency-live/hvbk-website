@@ -353,6 +353,7 @@ section.pad>*{position:relative;z-index:1}
 .info-row .ic.ic-mail{background:var(--teal-dark);color:#fff}
 .info-row .ic.ic-pin{background:var(--yellow);color:var(--ink)}
 .info-row .ic.ic-vest{background:transparent;border:2px solid var(--teal-dark);color:var(--teal-dark)}
+.info-row .info-badge{width:42px;height:42px;flex-shrink:0;object-fit:contain}
 
 /* ---------- CTA (now gradient) ---------- */
 .cta{
