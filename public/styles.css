@@ -871,11 +871,28 @@ footer a.fl:hover{color:var(--yellow)}
 .error-suggestions h3{font-size:17px;font-weight:800;color:var(--purple-deep);margin-bottom:14px}
 .error-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
 
-/* Error art */
+/* Error art - Lola 404 */
 .error-art{position:relative;display:flex;align-items:center;justify-content:center;min-height:320px}
-.error-hardhat{position:relative;z-index:2}
-.hardhat-svg{width:240px;height:240px;animation:float-drift 8s ease-in-out infinite}
-.error-blob{position:absolute;width:300px;height:300px;background:var(--teal-soft);opacity:.4;border-radius:46% 54% 52% 48%/52% 46% 54% 48%;animation:morph-blob 12s ease-in-out infinite}
+.lola-404{position:relative;z-index:2;text-align:center}
+.lola-img{width:340px;height:auto;filter:drop-shadow(0 20px 40px rgba(30,77,69,.25));animation:lola-confused 3s ease-in-out infinite}
+.lola-badge{margin-top:18px;font-size:13px;font-weight:800;color:var(--purple-deep);text-transform:uppercase;letter-spacing:1px;opacity:.8}
+
+/* Lola confused animation - head tilt */
+@keyframes lola-confused{
+  0%,100%{transform:translateY(0) rotate(-2deg)}
+  50%{transform:translateY(-12px) rotate(2deg)}
+}
+
+/* Floating question marks */
+.question-float{position:absolute;font-size:48px;font-weight:900;color:var(--lilac);opacity:.6;animation:float-question 4s ease-in-out infinite;pointer-events:none}
+.question-float.q1{top:-20px;left:-40px;animation-delay:0s}
+.question-float.q2{top:40px;right:-60px;font-size:38px;animation-delay:1.2s}
+.question-float.q3{bottom:20px;left:-20px;font-size:42px;animation-delay:2.4s}
+
+@keyframes float-question{
+  0%,100%{transform:translateY(0) rotate(0deg);opacity:.6}
+  50%{transform:translateY(-20px) rotate(8deg);opacity:.3}
+}
 
 /* Quick links */
 .error-links{margin-top:60px;text-align:center}
@@ -889,15 +906,21 @@ footer a.fl:hover{color:var(--yellow)}
 @media(max-width:920px){
   .error-grid{grid-template-columns:1fr;gap:40px}
   .error-art{order:-1;min-height:260px}
-  .hardhat-svg{width:200px;height:200px}
-  .error-blob{width:250px;height:250px}
+  .lola-img{width:280px}
+  .question-float{font-size:38px}
+  .question-float.q2{font-size:32px}
+  .question-float.q3{font-size:36px}
 }
 @media(max-width:600px){
   .error-hero{padding:50px 0 40px}
   .error-code{text-shadow:4px 4px 0 var(--purple-deep)}
   .error-art{min-height:200px}
-  .hardhat-svg{width:160px;height:160px}
-  .error-blob{width:200px;height:200px}
+  .lola-img{width:220px}
+  .lola-badge{font-size:11px}
+  .question-float{font-size:32px}
+  .question-float.q1{left:-20px}
+  .question-float.q2{font-size:28px;right:-30px}
+  .question-float.q3{font-size:30px;left:-10px}
   .quick-links{flex-direction:column;align-items:stretch}
   .quick-link{justify-content:center}
 }
