@@ -322,8 +322,8 @@ section.pad>*{position:relative;z-index:1}
 .panel h2{font-size:clamp(28px,4vw,40px);font-weight:900;color:#fff;line-height:1.05}
 .panel p{color:#d3ddd9;margin-top:14px}
 .panel .ticks li{color:#e7edeb}
-.panel .ticks li:nth-child(odd)::before{background:var(--yellow);color:var(--ink)}
-.panel .ticks li:nth-child(even)::before{background:var(--lilac);color:var(--ink)}
+.panel .ticks li:nth-child(odd)::before{background:rgba(255,255,255,.15);color:#fff}
+.panel .ticks li:nth-child(even)::before{background:rgba(255,255,255,.15);color:#fff}
 
 /* ---------- CONTACT / FORM ---------- */
 .contact{background:var(--paper);position:relative;overflow:hidden}
@@ -496,8 +496,8 @@ footer{background:#16211e;color:#cfdbd7;padding:54px 0 28px}
 .fb-val:nth-child(3) .t{background:var(--yellow);color:var(--ink)}
 .fb-val:nth-child(4) .t{background:var(--purple-deep)}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.12)}
-footer .f-logo{background:#fff;border-radius:16px;padding:16px 20px;display:inline-block;margin-bottom:18px}
-footer .f-logo img{height:64px}
+footer .f-logo{background:#fff;border-radius:12px;padding:10px 14px;display:inline-block;margin-bottom:18px}
+footer .f-logo img{height:52px}
 footer p.blurb{color:#aebfba;font-size:14px;max-width:320px}
 footer h4{color:#fff;font-weight:800;letter-spacing:.4px;margin-bottom:14px;font-size:15px;text-transform:uppercase}
 footer a.fl{display:block;color:#b6c5c0;font-size:14px;margin-bottom:9px}
