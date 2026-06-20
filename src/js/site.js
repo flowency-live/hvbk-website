@@ -31,6 +31,28 @@ document.querySelectorAll('#navlinks a').forEach(function(a) {
   });
 });
 
+// Scroll-triggered crew card animations
+if ('IntersectionObserver' in window) {
+  const crewObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        crewObserver.unobserve(entry.target); // Only animate once
+      }
+    });
+  }, {
+    threshold: 0.2, // Trigger when 20% visible
+    rootMargin: '0px 0px -50px 0px' // Slightly earlier on mobile
+  });
+
+  // Observe all crew cards
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.crew-card').forEach(function(card) {
+      crewObserver.observe(card);
+    });
+  });
+}
+
 // Submit enquiry form to Supabase
 async function submitEnquiry(e) {
   e.preventDefault();
